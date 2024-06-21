@@ -16,7 +16,9 @@ public class BaseActions {
     }
 
     private static void validatePlatform(AppiumDriver driver) {
-        if (!driver.getCapabilities().getPlatformName().is(Platform.IOS) || !driver.getCapabilities().getPlatformName().is(Platform.ANDROID)) {
+        Platform platform = driver.getCapabilities().getPlatformName();
+
+        if (!platform.is(Platform.IOS) && !platform.is(Platform.ANDROID)) {
             throw new PlatformException("This platform is not supported: " + driver.getCapabilities().getPlatformName().name());
         }
     }
