@@ -24,4 +24,8 @@ public class SessionActions extends BaseActions {
     public void activateApp(String appId) {
         actionsSessionStrategy.activateApp(driver, appId);
     }
+
+    public boolean isAppInstalled(String appId) {
+        return actionsSessionStrategy.isAppInstalled(driver, appId);
+    }
 }

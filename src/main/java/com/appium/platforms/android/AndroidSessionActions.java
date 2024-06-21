@@ -15,4 +15,9 @@ public class AndroidSessionActions implements ActionsSessionInterface {
     public void activateApp(AppiumDriver driver, String appId) {
         driver.executeScript("mobile: activateApp", Map.of("appId", appId));
     }
+
+    @Override
+    public boolean isAppInstalled(AppiumDriver driver, String appId) {
+        return (boolean) driver.executeScript("mobile: isAppInstalled", Map.of("appId", appId));
+    }
 }
