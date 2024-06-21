@@ -19,8 +19,12 @@ public class ScrollActions extends BaseActions {
                 : new IOSScrollActions();
     }
 
-    public void swipe(WebElement webElement, Direction direction) {
-        scrollActions.swipe(driver, webElement, direction);
+    public void swipe(Direction direction, double percent) {
+        scrollActions.swipe(driver, direction, percent);
+    }
+
+    public void swipe(Direction direction, double percent, WebElement webElement) {
+        scrollActions.swipe(driver, direction, percent, webElement);
     }
 
     public void scroll(Direction direction, double percent) {

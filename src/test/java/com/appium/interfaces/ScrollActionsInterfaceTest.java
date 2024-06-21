@@ -27,11 +27,18 @@ class ScrollActionsInterfaceTest {
         scrollActionsInterface = mock(ScrollActionsInterface.class);
     }
 
-    @DisplayName("Should call swipe method")
+    @DisplayName("Should call swipe method with direction and percent")
     @Test
-    void testSwipe() {
-        scrollActionsInterface.swipe(driver, webElement, Direction.UP);
-        verify(scrollActionsInterface, times(1)).swipe(driver, webElement, Direction.UP);
+    void testSwipeWithDirectionAndPercent() {
+        scrollActionsInterface.swipe(driver, Direction.UP, 0.5);
+        verify(scrollActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5);
+    }
+
+    @DisplayName("Should call swipe method with direction, percent and webElement")
+    @Test
+    void testSwipeWithDirectionPercentAndWebElement() {
+        scrollActionsInterface.swipe(driver, Direction.UP, 0.5, webElement);
+        verify(scrollActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5, webElement);
     }
 
     @DisplayName("Should call scroll method with direction and percent")

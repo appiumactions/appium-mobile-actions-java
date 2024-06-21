@@ -9,18 +9,24 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import java.util.Map;
 
 public class IOSScrollActions implements ScrollActionsInterface {
-    @Override
-    public void swipe(AppiumDriver driver, WebElement webElement, Direction direction) {
 
+    @Override
+    public void swipe(AppiumDriver driver, Direction direction, double percent) {
+        driver.executeScript("mobile: swipe", Map.of("direction", direction.name().toLowerCase()));
+    }
+
+    @Override
+    public void swipe(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
+        driver.executeScript("mobile: swipe", Map.of("direction", direction.name().toLowerCase(), "elementId", ((RemoteWebElement) webElement).getId()));
     }
 
     @Override
     public void scroll(AppiumDriver driver, Direction direction, double percent) {
-        driver.executeScript("mobile: scroll", Map.of("direction", direction.name()));
+        driver.executeScript("mobile: scroll", Map.of("direction", direction.name().toLowerCase()));
     }
 
     @Override
     public void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
-        driver.executeScript("mobile: scroll", Map.of("direction", direction.name(), "elementId", ((RemoteWebElement) webElement).getId()));
+        driver.executeScript("mobile: scroll", Map.of("direction", direction.name().toLowerCase(), "elementId", ((RemoteWebElement) webElement).getId()));
     }
 }
