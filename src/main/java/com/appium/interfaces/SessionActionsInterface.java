@@ -2,7 +2,7 @@ package com.appium.interfaces;
 
 import io.appium.java_client.AppiumDriver;
 
-public interface ActionsSessionInterface {
+public interface SessionActionsInterface {
     void terminateApp(AppiumDriver driver, String appId);
     void terminateApp(AppiumDriver driver, String appId, int timeout);
     void activateApp(AppiumDriver driver, String appId);

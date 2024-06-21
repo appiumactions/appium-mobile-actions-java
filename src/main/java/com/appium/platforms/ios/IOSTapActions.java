@@ -1,6 +1,6 @@
 package com.appium.platforms.ios;
 
-import com.appium.interfaces.ActionsTapInterface;
+import com.appium.interfaces.TapActionsInterface;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import java.time.Duration;
 import java.util.Map;
 
-public class IOSTapActions implements ActionsTapInterface {
+public class IOSTapActions implements TapActionsInterface {
     @Override
     public void tap(AppiumDriver driver, WebElement webElement) {
         driver.executeScript("mobile: tap", Map.of("x", webElement.getLocation().getX(), "y", webElement.getLocation().getY()));

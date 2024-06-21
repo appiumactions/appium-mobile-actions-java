@@ -1,11 +1,11 @@
 package com.appium.platforms.android;
 
-import com.appium.interfaces.ActionsSessionInterface;
+import com.appium.interfaces.SessionActionsInterface;
 import io.appium.java_client.AppiumDriver;
 
 import java.util.Map;
 
-public class AndroidSessionActions implements ActionsSessionInterface {
+public class AndroidSessionActions implements SessionActionsInterface {
     @Override
     public void terminateApp(AppiumDriver driver, String appId) {
         driver.executeScript("mobile: terminateApp", Map.of("appId", appId));

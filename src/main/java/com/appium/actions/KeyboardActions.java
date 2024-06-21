@@ -1,6 +1,6 @@
 package com.appium.actions;
 
-import com.appium.interfaces.ActionsKeyboardInterface;
+import com.appium.interfaces.KeyboardActionsInterface;
 import com.appium.platforms.android.AndroidKeyboardActions;
 import com.appium.platforms.ios.IOSKeyboardActions;
 import io.appium.java_client.AppiumDriver;
@@ -8,25 +8,25 @@ import org.openqa.selenium.Platform;
 
 public class KeyboardActions extends BaseActions {
 
-    ActionsKeyboardInterface actionsKeyboardStrategy;
+    KeyboardActionsInterface keyboardActions;
 
     public KeyboardActions(AppiumDriver driver) {
         super(driver);
 
-        actionsKeyboardStrategy = platform.is(Platform.ANDROID)
+        keyboardActions = platform.is(Platform.ANDROID)
                 ? new AndroidKeyboardActions()
                 : new IOSKeyboardActions();
     }
 
     public void hideKeyboard() {
-        actionsKeyboardStrategy.hideKeyboard(driver);
+        keyboardActions.hideKeyboard(driver);
     }
 
     public void hideKeyboard(String[] keys) {
-        actionsKeyboardStrategy.hideKeyboard(driver, keys);
+        keyboardActions.hideKeyboard(driver, keys);
     }
 
     public boolean isKeyboardShown() {
-        return actionsKeyboardStrategy.isKeyboardShown(driver);
+        return keyboardActions.isKeyboardShown(driver);
     }
 }

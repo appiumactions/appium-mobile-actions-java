@@ -1,9 +1,9 @@
 package com.appium.platforms.android;
 
-import com.appium.interfaces.ActionsKeyboardInterface;
+import com.appium.interfaces.KeyboardActionsInterface;
 import io.appium.java_client.AppiumDriver;
 
-public class AndroidKeyboardActions implements ActionsKeyboardInterface {
+public class AndroidKeyboardActions implements KeyboardActionsInterface {
     @Override
     public void hideKeyboard(AppiumDriver driver) {
         driver.executeScript("mobile: hideKeyboard");

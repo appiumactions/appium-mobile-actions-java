@@ -4,7 +4,7 @@ import com.appium.enums.Direction;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 
-public interface ActionsScrollInterface {
+public interface ScrollActionsInterface {
     void swipe(AppiumDriver driver, WebElement webElement, Direction direction);
     void scroll(AppiumDriver driver, Direction direction, int topAreaDiscount, int bottomAreaDiscount);
 }
