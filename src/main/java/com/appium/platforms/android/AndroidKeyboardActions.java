@@ -10,6 +10,11 @@ public class AndroidKeyboardActions implements ActionsKeyboardInterface {
     }
 
     @Override
+    public void hideKeyboard(AppiumDriver driver, String[] keys) {
+        driver.executeScript("mobile: hideKeyboard");
+    }
+
+    @Override
     public boolean isKeyboardShown(AppiumDriver driver) {
         return (boolean) driver.executeScript("mobile: isKeyboardShown");
     }

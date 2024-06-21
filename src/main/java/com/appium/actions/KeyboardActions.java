@@ -22,6 +22,10 @@ public class KeyboardActions extends BaseActions {
         actionsKeyboardStrategy.hideKeyboard(driver);
     }
 
+    public void hideKeyboard(String[] keys) {
+        actionsKeyboardStrategy.hideKeyboard(driver, keys);
+    }
+
     public boolean isKeyboardShown() {
         return actionsKeyboardStrategy.isKeyboardShown(driver);
     }
