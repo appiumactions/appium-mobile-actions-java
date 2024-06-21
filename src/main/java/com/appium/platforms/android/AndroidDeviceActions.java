@@ -35,4 +35,9 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
     public void unlock(AppiumDriver driver, String key, String type, String strategy, int timeoutMs) {
         driver.executeScript("mobile: unlock", Map.of("key", key, "type", type, "strategy", strategy, "timeoutMs", timeoutMs));
     }
+
+    @Override
+    public boolean isLocked(AppiumDriver driver) {
+        return (boolean) driver.executeScript("mobile: isLocked");
+    }
 }

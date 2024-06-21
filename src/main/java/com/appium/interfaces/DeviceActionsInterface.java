@@ -9,4 +9,5 @@ public interface DeviceActionsInterface {
     void unlock(AppiumDriver driver, String key, String type, String strategy);
     void unlock(AppiumDriver driver, String key, String type, int timeoutMs);
     void unlock(AppiumDriver driver, String key, String type, String strategy, int timeoutMs);
+    boolean isLocked(AppiumDriver driver);
 }

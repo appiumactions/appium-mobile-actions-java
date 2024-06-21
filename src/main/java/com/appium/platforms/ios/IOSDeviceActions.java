@@ -35,4 +35,9 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     public void unlock(AppiumDriver driver, String key, String type, String strategy, int timeoutMs) {
         driver.executeScript("mobile: unlock");
     }
+
+    @Override
+    public boolean isLocked(AppiumDriver driver) {
+        return (boolean) driver.executeScript("mobile: isLocked");
+    }
 }

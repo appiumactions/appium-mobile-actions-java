@@ -40,4 +40,8 @@ public class DeviceActions extends BaseActions {
     public void unlock(String key, String type, String strategy, int timeoutMs) {
         deviceActions.unlock(driver, key, type, strategy, timeoutMs);
     }
+
+    public boolean isLocked() {
+        return deviceActions.isLocked(driver);
+    }
 }
