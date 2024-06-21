@@ -1,6 +1,6 @@
 package com.appium.actions;
 
-import com.appium.enums.Direction;
+import com.appium.arguments.Direction;
 import com.appium.interfaces.ScrollActionsInterface;
 import com.appium.platforms.android.AndroidScrollActions;
 import com.appium.platforms.ios.IOSScrollActions;
@@ -22,7 +22,12 @@ public class ScrollActions extends BaseActions {
     public void swipe(WebElement webElement, Direction direction) {
         scrollActions.swipe(driver, webElement, direction);
     }
-    public void scroll(Direction direction, int topAreaDiscount, int bottomAreaDiscount) {
-        scrollActions.scroll(driver, direction, topAreaDiscount, bottomAreaDiscount);
+
+    public void scroll(Direction direction, double percent) {
+        scrollActions.scroll(driver, direction, percent);
+    }
+
+    public void scroll(Direction direction, double percent, WebElement webElement) {
+        scrollActions.scroll(driver, direction, percent, webElement);
     }
 }
