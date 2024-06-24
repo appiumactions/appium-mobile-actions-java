@@ -4,34 +4,36 @@ import com.appium.arguments.Direction;
 import com.appium.interfaces.ScrollActionsInterface;
 import com.appium.platforms.android.AndroidScrollActions;
 import com.appium.platforms.ios.IOSScrollActions;
+import com.google.common.annotations.VisibleForTesting;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 
 public class ScrollActions extends BaseActions {
-    private final ScrollActionsInterface scrollActions;
+    @VisibleForTesting
+    protected final ScrollActionsInterface scrollActionsPlatform;
 
     public ScrollActions(AppiumDriver driver) {
         super(driver);
 
-        scrollActions = platform.is(Platform.ANDROID)
+        scrollActionsPlatform = platform.is(Platform.ANDROID)
                 ? new AndroidScrollActions()
                 : new IOSScrollActions();
     }
 
     public void swipe(Direction direction, double percent) {
-        scrollActions.swipe(driver, direction, percent);
+        scrollActionsPlatform.swipe(driver, direction, percent);
     }
 
     public void swipe(Direction direction, double percent, WebElement webElement) {
-        scrollActions.swipe(driver, direction, percent, webElement);
+        scrollActionsPlatform.swipe(driver, direction, percent, webElement);
     }
 
     public void scroll(Direction direction, double percent) {
-        scrollActions.scroll(driver, direction, percent);
+        scrollActionsPlatform.scroll(driver, direction, percent);
     }
 
     public void scroll(Direction direction, double percent, WebElement webElement) {
-        scrollActions.scroll(driver, direction, percent, webElement);
+        scrollActionsPlatform.scroll(driver, direction, percent, webElement);
     }
 }
