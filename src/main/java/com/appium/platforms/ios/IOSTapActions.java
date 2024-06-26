@@ -43,7 +43,7 @@ public class IOSTapActions implements TapActionsInterface {
      *
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the long tap action is to be performed.
-     * @param duration   the Duration for which the long tap action is to be held.
+     * @param duration   the Duration in seconds for which the long tap action is to be held.
      * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-touchandhold">XCUITest - touchAndHold</a>
      */
     @Override

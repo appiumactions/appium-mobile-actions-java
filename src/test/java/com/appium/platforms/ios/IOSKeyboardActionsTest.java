@@ -28,7 +28,7 @@ class IOSKeyboardActionsTest {
 
     @DisplayName("Should execute the hideKeyboard script for iOS")
     @Test
-    void test() {
+    void testHideKeyboard() {
         iosKeyboardActions.hideKeyboard(driver);
 
         verify(driver, times(1)).executeScript("mobile: hideKeyboard");
