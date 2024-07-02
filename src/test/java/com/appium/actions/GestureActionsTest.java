@@ -1,7 +1,7 @@
 package com.appium.actions;
 
-import com.appium.platforms.android.AndroidTapActions;
-import com.appium.platforms.ios.IOSTapActions;
+import com.appium.platforms.android.AndroidGestureActions;
+import com.appium.platforms.ios.IOSGestureActions;
 import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +14,7 @@ import org.openqa.selenium.Platform;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.mockito.Mockito.when;
 
-class TapActionsTest {
+class GestureActionsTest {
 
     @Mock
     private AppiumDriver driver;
@@ -22,7 +22,7 @@ class TapActionsTest {
     @Mock
     private Capabilities capabilities;
 
-    private TapActions tapActions;
+    private GestureActions gestureActions;
 
     @BeforeEach
     public void setUp() {
@@ -35,9 +35,9 @@ class TapActionsTest {
     void testAndroidPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.ANDROID);
 
-        tapActions = new TapActions(driver);
+        gestureActions = new GestureActions(driver);
 
-        assertInstanceOf(AndroidTapActions.class, tapActions.tapActionsPlatform);
+        assertInstanceOf(AndroidGestureActions.class, gestureActions.gestureActionsPlatform);
     }
 
     @DisplayName("Should return a instance of IOSTapActions when platform is iOS")
@@ -45,8 +45,8 @@ class TapActionsTest {
     void testIOSPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.IOS);
 
-        tapActions = new TapActions(driver);
+        gestureActions = new GestureActions(driver);
 
-        assertInstanceOf(IOSTapActions.class, tapActions.tapActionsPlatform);
+        assertInstanceOf(IOSGestureActions.class, gestureActions.gestureActionsPlatform);
     }
 }

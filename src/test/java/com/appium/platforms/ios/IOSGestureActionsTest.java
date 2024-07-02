@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static org.mockito.Mockito.*;
 
-class IOSTapActionsTest {
+class IOSGestureActionsTest {
 
     @Mock
     private AppiumDriver driver;
@@ -22,7 +22,7 @@ class IOSTapActionsTest {
     @Mock
     private RemoteWebElement webElement;
 
-    private IOSTapActions iosTapActions;
+    private IOSGestureActions iosGestureActions;
 
     @BeforeEach
     void setUp() {
@@ -31,13 +31,13 @@ class IOSTapActionsTest {
         when(webElement.getId()).thenReturn("elementId");
         when(webElement.getLocation()).thenReturn(new Point(10, 20));
 
-        iosTapActions = new IOSTapActions();
+        iosGestureActions = new IOSGestureActions();
     }
 
     @DisplayName("Should execute the tap script for iOS")
     @Test
     void testTap() {
-        iosTapActions.tap(driver, webElement);
+        iosGestureActions.tap(driver, webElement);
 
         verify(driver, times(1)).executeScript("mobile: tap", Map.of("x", webElement.getLocation().getX(), "y", webElement.getLocation().getY()));
     }
@@ -45,7 +45,7 @@ class IOSTapActionsTest {
     @DisplayName("Should execute the double tap script for iOS")
     @Test
     void testDoubleTap() {
-        iosTapActions.doubleTap(driver, webElement);
+        iosGestureActions.doubleTap(driver, webElement);
 
         verify(driver, times(1)).executeScript("mobile: doubleTap", Map.of("elementId", webElement.getId()));
     }
@@ -54,7 +54,7 @@ class IOSTapActionsTest {
     @Test
     void testLongTap() {
         Duration duration = Duration.ofSeconds(3);
-        iosTapActions.longTap(driver, webElement, duration);
+        iosGestureActions.longTap(driver, webElement, duration);
 
         verify(driver, times(1)).executeScript("mobile: touchAndHold", Map.of("elementId", webElement.getId(), "duration", duration.getSeconds()));
     }

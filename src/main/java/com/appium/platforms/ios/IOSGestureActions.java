@@ -1,6 +1,6 @@
 package com.appium.platforms.ios;
 
-import com.appium.interfaces.TapActionsInterface;
+import com.appium.interfaces.GestureActionsInterface;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -9,10 +9,10 @@ import java.time.Duration;
 import java.util.Map;
 
 /**
- * A class that implements the TapActionsInterface for iOS platform.
+ * A class that implements the GestureActionsInterface for iOS platform.
  * It provides methods to perform tap actions on an iOS device using Appium.
  */
-public class IOSTapActions implements TapActionsInterface {
+public class IOSGestureActions implements GestureActionsInterface {
 
     /**
      * Executes a single tap action on the given web element.

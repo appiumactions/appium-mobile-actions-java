@@ -1,6 +1,6 @@
 package com.appium.platforms.android;
 
-import com.appium.interfaces.TapActionsInterface;
+import com.appium.interfaces.GestureActionsInterface;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -9,10 +9,10 @@ import java.time.Duration;
 import java.util.Map;
 
 /**
- * A class that implements the TapActionsInterface for Android platform.
+ * A class that implements the GestureActionsInterface for Android platform.
  * It provides methods to perform tap actions on an Android device using Appium.
  */
-public class AndroidTapActions implements TapActionsInterface {
+public class AndroidGestureActions implements GestureActionsInterface {
 
     /**
      * Executes a single tap action on the given web element.

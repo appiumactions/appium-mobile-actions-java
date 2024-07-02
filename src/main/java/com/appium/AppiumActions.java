@@ -6,7 +6,7 @@ import io.appium.java_client.AppiumDriver;
 public class AppiumActions {
 
     public final KeyboardActions keyboardActions;
-    public final TapActions tapActions;
+    public final GestureActions gestureActions;
     public final ScrollActions scrollActions;
     public final SessionActions sessionActions;
     public final DeviceActions deviceActions;
@@ -17,7 +17,7 @@ public class AppiumActions {
         }
 
         keyboardActions = new KeyboardActions(driver);
-        tapActions = new TapActions(driver);
+        gestureActions = new GestureActions(driver);
         scrollActions = new ScrollActions(driver);
         sessionActions = new SessionActions(driver);
         deviceActions = new DeviceActions(driver);

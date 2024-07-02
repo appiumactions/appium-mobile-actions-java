@@ -12,7 +12,7 @@ import java.time.Duration;
 
 import static org.mockito.Mockito.*;
 
-class TapActionsInterfaceTest {
+class GestureActionsInterfaceTest {
 
     @Mock
     private AppiumDriver driver;
@@ -20,32 +20,32 @@ class TapActionsInterfaceTest {
     @Mock
     private WebElement webElement;
 
-    private TapActionsInterface tapActions;
+    private GestureActionsInterface gestureActions;
 
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
-        tapActions = mock(TapActionsInterface.class);
+        gestureActions = mock(GestureActionsInterface.class);
     }
 
     @DisplayName("Should call tap method")
     @Test
     void testTap() {
-        tapActions.tap(driver, webElement);
-        verify(tapActions, times(1)).tap(driver, webElement);
+        gestureActions.tap(driver, webElement);
+        verify(gestureActions, times(1)).tap(driver, webElement);
     }
 
     @DisplayName("Should call doubleTap method")
     @Test
     void testDoubleTap() {
-        tapActions.doubleTap(driver, webElement);
-        verify(tapActions, times(1)).doubleTap(driver, webElement);
+        gestureActions.doubleTap(driver, webElement);
+        verify(gestureActions, times(1)).doubleTap(driver, webElement);
     }
 
     @DisplayName("Should call longTap method")
     @Test
     void testLongTap() {
-        tapActions.longTap(driver, webElement, Duration.ofSeconds(3));
-        verify(tapActions, times(1)).longTap(driver, webElement, Duration.ofSeconds(3));
+        gestureActions.longTap(driver, webElement, Duration.ofSeconds(3));
+        verify(gestureActions, times(1)).longTap(driver, webElement, Duration.ofSeconds(3));
     }
 }

@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static org.mockito.Mockito.*;
 
-class AndroidTapActionsTest {
+class AndroidGestureActionsTest {
 
     @Mock
     private AppiumDriver driver;
@@ -21,7 +21,7 @@ class AndroidTapActionsTest {
     @Mock
     private RemoteWebElement webElement;
 
-    private AndroidTapActions androidTapActions;
+    private AndroidGestureActions androidGestureActions;
 
     @BeforeEach
     void setUp() {
@@ -29,13 +29,13 @@ class AndroidTapActionsTest {
 
         when(webElement.getId()).thenReturn("elementId");
 
-        androidTapActions = new AndroidTapActions();
+        androidGestureActions = new AndroidGestureActions();
     }
 
     @DisplayName("Should execute the tap script for Android")
     @Test
     void testTap() {
-        androidTapActions.tap(driver, webElement);
+        androidGestureActions.tap(driver, webElement);
 
         verify(driver, times(1)).executeScript("mobile: clickGesture", Map.of("elementId", webElement.getId()));
     }
@@ -43,7 +43,7 @@ class AndroidTapActionsTest {
     @DisplayName("Should execute the double tap script for Android")
     @Test
     void testDoubleTap() {
-        androidTapActions.doubleTap(driver, webElement);
+        androidGestureActions.doubleTap(driver, webElement);
 
         verify(driver, times(1)).executeScript("mobile: doubleClickGesture", Map.of("elementId", webElement.getId()));
     }
@@ -52,7 +52,7 @@ class AndroidTapActionsTest {
     @Test
     void testLongTap() {
         Duration duration = Duration.ofSeconds(3);
-        androidTapActions.longTap(driver, webElement, duration);
+        androidGestureActions.longTap(driver, webElement, duration);
 
         verify(driver, times(1)).executeScript("mobile: longClickGesture", Map.of("elementId", webElement.getId(), "duration", duration.getSeconds() * 1000));
     }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
 
-public interface TapActionsInterface {
+public interface GestureActionsInterface {
     void tap(AppiumDriver driver, WebElement webElement);
     void doubleTap(AppiumDriver driver, WebElement webElement);
     void longTap(AppiumDriver driver, WebElement webElement, Duration duration);
