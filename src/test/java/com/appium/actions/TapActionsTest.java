@@ -1,7 +1,7 @@
 package com.appium.actions;
 
-import com.appium.platforms.android.AndroidScrollActions;
-import com.appium.platforms.ios.IOSScrollActions;
+import com.appium.platforms.android.AndroidTapActions;
+import com.appium.platforms.ios.IOSTapActions;
 import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +14,7 @@ import org.openqa.selenium.Platform;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.mockito.Mockito.when;
 
-class ScrollActionsTest {
+class TapActionsTest {
 
     @Mock
     private AppiumDriver driver;
@@ -22,7 +22,7 @@ class ScrollActionsTest {
     @Mock
     private Capabilities capabilities;
 
-    private ScrollActions scrollActions;
+    private TapActions tapActions;
 
     @BeforeEach
     public void setUp() {
@@ -30,23 +30,23 @@ class ScrollActionsTest {
         when(driver.getCapabilities()).thenReturn(capabilities);
     }
 
-    @DisplayName("Should return a instance of AndroidScrollActions when platform is Android")
+    @DisplayName("Should return a instance of AndroidTapActions when platform is Android")
     @Test
     void testAndroidPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.ANDROID);
 
-        scrollActions = new ScrollActions(driver);
+        tapActions = new TapActions(driver);
 
-        assertInstanceOf(AndroidScrollActions.class, scrollActions.scrollActionsPlatform);
+        assertInstanceOf(AndroidTapActions.class, tapActions.tapActionsPlatform);
     }
 
-    @DisplayName("Should return a instance of IOSScrollActions when platform is iOS")
+    @DisplayName("Should return a instance of IOSTapActions when platform is iOS")
     @Test
     void testIOSPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.IOS);
 
-        scrollActions = new ScrollActions(driver);
+        tapActions = new TapActions(driver);
 
-        assertInstanceOf(IOSScrollActions.class, scrollActions.scrollActionsPlatform);
+        assertInstanceOf(IOSTapActions.class, tapActions.tapActionsPlatform);
     }
 }

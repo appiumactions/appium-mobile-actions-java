@@ -30,7 +30,7 @@ class GestureActionsTest {
         when(driver.getCapabilities()).thenReturn(capabilities);
     }
 
-    @DisplayName("Should return a instance of AndroidTapActions when platform is Android")
+    @DisplayName("Should return a instance of AndroidScrollActions when platform is Android")
     @Test
     void testAndroidPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.ANDROID);
@@ -40,7 +40,7 @@ class GestureActionsTest {
         assertInstanceOf(AndroidGestureActions.class, gestureActions.gestureActionsPlatform);
     }
 
-    @DisplayName("Should return a instance of IOSTapActions when platform is iOS")
+    @DisplayName("Should return a instance of IOSScrollActions when platform is iOS")
     @Test
     void testIOSPlatformActions() {
         when(capabilities.getPlatformName()).thenReturn(Platform.IOS);

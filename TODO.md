@@ -11,12 +11,12 @@
 * hideKeyboard
 * isKeyboardShown
 
-## Scroll Actions
+## Gesture Actions
 
 * scroll *
 * swipe *
 
-## Gesture Actions
+## Tap Actions
 
 * tap
 * doubleTap

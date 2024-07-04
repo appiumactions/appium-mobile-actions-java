@@ -1,5 +1,6 @@
 package com.appium.interfaces;
 
+import com.appium.arguments.Direction;
 import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -7,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.openqa.selenium.WebElement;
-
-import java.time.Duration;
 
 import static org.mockito.Mockito.*;
 
@@ -20,32 +19,53 @@ class GestureActionsInterfaceTest {
     @Mock
     private WebElement webElement;
 
-    private GestureActionsInterface gestureActions;
+    private GestureActionsInterface gestureActionsInterface;
 
     @BeforeEach
-    public void setup() {
+    public void setUp() {
         MockitoAnnotations.openMocks(this);
-        gestureActions = mock(GestureActionsInterface.class);
+        gestureActionsInterface = mock(GestureActionsInterface.class);
     }
 
-    @DisplayName("Should call tap method")
+    @DisplayName("Should call swipe method with direction and percent")
     @Test
-    void testTap() {
-        gestureActions.tap(driver, webElement);
-        verify(gestureActions, times(1)).tap(driver, webElement);
+    void testSwipeWithDirectionAndPercent() {
+        gestureActionsInterface.swipe(driver, Direction.UP, 0.5);
+        verify(gestureActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5);
     }
 
-    @DisplayName("Should call doubleTap method")
+    @DisplayName("Should call swipe method with direction, percent and webElement")
     @Test
-    void testDoubleTap() {
-        gestureActions.doubleTap(driver, webElement);
-        verify(gestureActions, times(1)).doubleTap(driver, webElement);
+    void testSwipeWithDirectionPercentAndWebElement() {
+        gestureActionsInterface.swipe(driver, Direction.UP, 0.5, webElement);
+        verify(gestureActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5, webElement);
     }
 
-    @DisplayName("Should call longTap method")
+    @DisplayName("Should call swipe method with direction, percent and speed")
     @Test
-    void testLongTap() {
-        gestureActions.longTap(driver, webElement, Duration.ofSeconds(3));
-        verify(gestureActions, times(1)).longTap(driver, webElement, Duration.ofSeconds(3));
+    void testSwipeWithDirectionPercentAndSpeed() {
+        gestureActionsInterface.swipe(driver, Direction.UP, 0.5, 100);
+        verify(gestureActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5, 100);
+    }
+
+    @DisplayName("Should call swipe method with direction, percent, speed and webElement")
+    @Test
+    void testSwipeWithDirectionPercentSpeedAndWebElement() {
+        gestureActionsInterface.swipe(driver, Direction.UP, 0.5, 100, webElement);
+        verify(gestureActionsInterface, times(1)).swipe(driver, Direction.UP, 0.5, 100, webElement);
+    }
+
+    @DisplayName("Should call scroll method with direction and percent")
+    @Test
+    void testScrollWithDirectionAndPercent() {
+        gestureActionsInterface.scroll(driver, Direction.UP, 0.5);
+        verify(gestureActionsInterface, times(1)).scroll(driver, Direction.UP, 0.5);
+    }
+
+    @DisplayName("Should call scroll method with direction, percent and webElement")
+    @Test
+    void testScrollWithDirectionPercentAndWebElement() {
+        gestureActionsInterface.scroll(driver, Direction.UP, 0.5, webElement);
+        verify(gestureActionsInterface, times(1)).scroll(driver, Direction.UP, 0.5, webElement);
     }
 }

@@ -1,53 +1,99 @@
 package com.appium.platforms.android;
 
+import com.appium.arguments.Direction;
 import com.appium.interfaces.GestureActionsInterface;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-import java.time.Duration;
 import java.util.Map;
 
 /**
- * A class that implements the GestureActionsInterface for Android platform.
- * It provides methods to perform tap actions on an Android device using Appium.
+ * Provides Android-specific implementations for scroll and swipe actions.
+ * This class implements the {@link GestureActionsInterface} to provide methods
+ * driver.executeScript method with mobile-specific gestures.
  */
 public class AndroidGestureActions implements GestureActionsInterface {
-
     /**
-     * Executes a single tap action on the given web element.
+     * Performs a swipe gesture in the specified direction covering a certain percentage of the screen.
      *
-     * @param driver     the AppiumDriver instance to interact with the device.
-     * @param webElement the WebElement on which the tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-clickgesture">UiAutomator2 - clickGesture</a>
+     * @param driver    The AppiumDriver instance used to perform the gesture.
+     * @param direction The direction of the swipe (UP, DOWN, LEFT, RIGHT).
+     * @param percent   The percentage of the screen the swipe should cover.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
-    public void tap(AppiumDriver driver, WebElement webElement) {
-        driver.executeScript("mobile: clickGesture", Map.of("elementId", ((RemoteWebElement) webElement).getId()));
+    public void swipe(AppiumDriver driver, Direction direction, double percent) {
+        driver.executeScript("mobile: swipeGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent));
     }
 
     /**
-     * Executes a double tap action on the given web element.
+     * Performs a swipe gesture on a specific element in the specified direction covering a certain percentage of the screen.
      *
-     * @param driver     the AppiumDriver instance to interact with the device.
-     * @param webElement the WebElement on which the double tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-doubleclickgesture">UiAutomator2 - doubleClickgesture</a>
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param direction  The direction of the swipe (UP, DOWN, LEFT, RIGHT).
+     * @param percent    The percentage of the screen the swipe should cover.
+     * @param webElement The WebElement on which the swipe gesture should be performed.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
-    public void doubleTap(AppiumDriver driver, WebElement webElement) {
-        driver.executeScript("mobile: doubleClickGesture", Map.of("elementId", ((RemoteWebElement) webElement).getId()));
+    public void swipe(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
+        driver.executeScript("mobile: swipeGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent, "elementId", ((RemoteWebElement) webElement).getId()));
     }
 
     /**
-     * Executes a long tap action on the given web element for a specified duration.
+     * Performs a swipe gesture in the specified direction covering a certain percentage of the screen with a specific speed.
      *
-     * @param driver     the AppiumDriver instance to interact with the device.
-     * @param webElement the WebElement on which the long tap action is to be performed.
-     * @param duration   the Duration in seconds for which the long tap action is to be held.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-longclickgesture">UiAutomator2 - longClickGesture</a>
+     * @param driver    The AppiumDriver instance used to perform the gesture.
+     * @param direction The direction of the swipe (UP, DOWN, LEFT, RIGHT).
+     * @param percent   The percentage of the screen the swipe should cover.
+     * @param speed     The speed of the swipe gesture.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
-    public void longTap(AppiumDriver driver, WebElement webElement, Duration duration) {
-        driver.executeScript("mobile: longClickGesture", Map.of("elementId", ((RemoteWebElement) webElement).getId(), "duration", duration.getSeconds() * 1000));
+    public void swipe(AppiumDriver driver, Direction direction, double percent, int speed) {
+        driver.executeScript("mobile: swipeGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent, "speed", speed));
+    }
+
+    /**
+     * Performs a swipe gesture on a specific element in the specified direction covering a certain percentage of the screen with a specific speed.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param direction  The direction of the swipe (UP, DOWN, LEFT, RIGHT).
+     * @param percent    The percentage of the screen the swipe should cover.
+     * @param speed      The speed of the swipe gesture.
+     * @param webElement The WebElement on which the swipe gesture should be performed.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
+     */
+    @Override
+    public void swipe(AppiumDriver driver, Direction direction, double percent, int speed, WebElement webElement) {
+        driver.executeScript("mobile: swipeGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent, "speed", speed, "elementId", ((RemoteWebElement) webElement).getId()));
+    }
+
+    /**
+     * Performs a scroll gesture in the specified direction covering a certain percentage of the screen.
+     *
+     * @param driver    The AppiumDriver instance used to perform the gesture.
+     * @param direction The direction of the scroll (UP, DOWN, LEFT, RIGHT).
+     * @param percent   The percentage of the screen the scroll should cover.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
+     */
+    @Override
+    public void scroll(AppiumDriver driver, Direction direction, double percent) {
+        driver.executeScript("mobile: scrollGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent));
+    }
+
+    /**
+     * Performs a scroll gesture on a specific element in the specified direction covering a certain percentage of the screen.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param direction  The direction of the scroll (UP, DOWN, LEFT, RIGHT).
+     * @param percent    The percentage of the screen the scroll should cover.
+     * @param webElement The WebElement on which the scroll gesture should be performed.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
+     */
+    @Override
+    public void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
+        driver.executeScript("mobile: scrollGesture", Map.of("direction", direction.name().toLowerCase(), "elementId", ((RemoteWebElement) webElement).getId(), "percent", percent));
     }
 }

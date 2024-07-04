@@ -1,12 +1,14 @@
 package com.appium.interfaces;
 
+import com.appium.arguments.Direction;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 
-import java.time.Duration;
-
 public interface GestureActionsInterface {
-    void tap(AppiumDriver driver, WebElement webElement);
-    void doubleTap(AppiumDriver driver, WebElement webElement);
-    void longTap(AppiumDriver driver, WebElement webElement, Duration duration);
+    void swipe(AppiumDriver driver, Direction direction, double percent);
+    void swipe(AppiumDriver driver, Direction direction, double percent, WebElement webElement);
+    void swipe(AppiumDriver driver, Direction direction, double percent, int speed);
+    void swipe(AppiumDriver driver, Direction direction, double percent, int speed, WebElement webElement);
+    void scroll(AppiumDriver driver, Direction direction, double percent);
+    void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement);
 }
