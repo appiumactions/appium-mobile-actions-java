@@ -5,21 +5,21 @@ import io.appium.java_client.AppiumDriver;
 
 public class AppiumActions {
 
-    public final KeyboardActions keyboardActions;
-    public final TapActions tapActions;
-    public final GestureActions gestureActions;
-    public final SessionActions sessionActions;
-    public final DeviceActions deviceActions;
+    public final KeyboardActions keyboard;
+    public final TapActions tap;
+    public final GestureActions gesture;
+    public final SessionActions session;
+    public final DeviceActions device;
 
     public AppiumActions(AppiumDriver driver) {
         if (driver == null) {
             throw new IllegalArgumentException("AppiumDriver cannot be null.");
         }
 
-        keyboardActions = new KeyboardActions(driver);
-        tapActions = new TapActions(driver);
-        gestureActions = new GestureActions(driver);
-        sessionActions = new SessionActions(driver);
-        deviceActions = new DeviceActions(driver);
+        keyboard = new KeyboardActions(driver);
+        tap = new TapActions(driver);
+        gesture = new GestureActions(driver);
+        session = new SessionActions(driver);
+        device = new DeviceActions(driver);
     }
 }

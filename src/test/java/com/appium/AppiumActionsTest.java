@@ -43,7 +43,7 @@ class AppiumActionsTest {
     @DisplayName("Should return a instance of DeviceActions")
     @Test
     void testDeviceActions() {
-        DeviceActions deviceActions = appiumActions.deviceActions;
+        DeviceActions deviceActions = appiumActions.device;
 
         assertInstanceOf(DeviceActions.class, deviceActions);
     }
@@ -51,7 +51,7 @@ class AppiumActionsTest {
     @DisplayName("Should return a instance of SessionActions")
     @Test
     void testSessionActions() {
-        SessionActions sessionActions = appiumActions.sessionActions;
+        SessionActions sessionActions = appiumActions.session;
 
         assertInstanceOf(SessionActions.class, sessionActions);
     }
@@ -59,7 +59,7 @@ class AppiumActionsTest {
     @DisplayName("Should return a instance of GestureActions")
     @Test
     void testGestureActions() {
-        GestureActions gestureActions = appiumActions.gestureActions;
+        GestureActions gestureActions = appiumActions.gesture;
 
         assertInstanceOf(GestureActions.class, gestureActions);
     }
@@ -67,7 +67,7 @@ class AppiumActionsTest {
     @DisplayName("Should return a instance of TapActions")
     @Test
     void testTapActions() {
-        TapActions tapActions = appiumActions.tapActions;
+        TapActions tapActions = appiumActions.tap;
 
         assertInstanceOf(TapActions.class, tapActions);
     }
@@ -75,7 +75,7 @@ class AppiumActionsTest {
     @DisplayName("Should return a instance of KeyboardActions")
     @Test
     void testKeyboardActions() {
-        KeyboardActions keyboardActions = appiumActions.keyboardActions;
+        KeyboardActions keyboardActions = appiumActions.keyboard;
 
         assertInstanceOf(KeyboardActions.class, keyboardActions);
     }
