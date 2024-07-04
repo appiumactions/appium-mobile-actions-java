@@ -183,6 +183,18 @@ public class AndroidSessionActions implements SessionActionsInterface {
     }
 
     /**
+     * Backgrounds the app on the device.
+     *
+     * @param driver  the AppiumDriver instance to interact with the device.
+     * @param seconds the amount of seconds to wait between putting the app to background and restoring it.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-backgroundapp">UiAutomator2 - backgroundApp</a>
+     */
+    @Override
+    public void backgroundApp(AppiumDriver driver, int seconds) {
+        driver.executeScript("mobile: backgroundApp", Map.of("seconds", seconds));
+    }
+
+    /**
      * Accepts an alert on the device.
      *
      * @param driver the AppiumDriver instance to interact with the device.

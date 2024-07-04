@@ -30,14 +30,12 @@
 * removeApp
 * installApp
 * clearApp
+* backgroundApp
 * acceptAlert
 * dismissAlert
 
 ## To be implemented
 
-* launchApp (startActivity) (Session Actions)
-* killApp (Session Actions)
 * pressButton
-* backgroundApp (Session Actions)
 * pinch (Gesture Actions)
 * shake

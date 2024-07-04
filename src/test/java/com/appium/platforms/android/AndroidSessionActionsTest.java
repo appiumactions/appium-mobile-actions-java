@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.time.Duration;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -143,6 +144,14 @@ class AndroidSessionActionsTest {
         androidSessionActions.clearApp(driver, "com.example");
 
         verify(driver).executeScript("mobile: clearApp", Map.of("appId", "com.example"));
+    }
+
+    @DisplayName("Should execute the backgroundApp script for Android")
+    @Test
+    void testBackgroundApp() {
+        androidSessionActions.backgroundApp(driver, 5);
+
+        verify(driver).executeScript("mobile: backgroundApp", Map.of("seconds", 5));
     }
 
     @DisplayName("Should execute the acceptAlert script for Android")

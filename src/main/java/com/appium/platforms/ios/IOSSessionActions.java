@@ -182,6 +182,18 @@ public class IOSSessionActions implements SessionActionsInterface {
     }
 
     /**
+     * Backgrounds the app on the iOS device.
+     *
+     * @param driver  the AppiumDriver instance to interact with the device.
+     * @param seconds the amount of seconds to wait between putting the app to background and restoring it.
+     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-backgroundapp">XCUITest - backgroundApp</a>
+     */
+    @Override
+    public void backgroundApp(AppiumDriver driver, int seconds) {
+        driver.executeScript("mobile: backgroundApp", Map.of("seconds", seconds));
+    }
+
+    /**
      * Accepts an alert on the iOS device.
      *
      * @param driver the AppiumDriver instance to interact with the device.

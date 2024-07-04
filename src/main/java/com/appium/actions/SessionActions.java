@@ -195,6 +195,17 @@ public class SessionActions extends BaseActions {
     }
 
     /**
+     * Backgrounds the app on the device.
+     *
+     * @param seconds the number of seconds to background the app.
+     * @see com.appium.platforms.android.AndroidSessionActions#backgroundApp(AppiumDriver, int)
+     * @see com.appium.platforms.ios.IOSSessionActions#backgroundApp(AppiumDriver, int)
+     */
+    public void backgroundApp(int seconds) {
+        sessionActionsPlatform.backgroundApp(driver, seconds);
+    }
+
+    /**
      * Accept alert on the device.
      *
      * @see com.appium.platforms.android.AndroidSessionActions#acceptAlert(AppiumDriver)

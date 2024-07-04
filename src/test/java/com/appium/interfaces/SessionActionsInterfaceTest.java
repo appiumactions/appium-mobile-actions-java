@@ -135,6 +135,13 @@ class SessionActionsInterfaceTest {
         verify(sessionActions, times(1)).clearApp(driver, appId);
     }
 
+    @DisplayName("Should call backgroundApp method")
+    @Test
+    void testBackgroundApp() {
+        sessionActions.backgroundApp(driver, 5);
+        verify(sessionActions, times(1)).backgroundApp(driver, 5);
+    }
+
     @DisplayName("Should call acceptAlert method")
     @Test
     void testAcceptAlert() {

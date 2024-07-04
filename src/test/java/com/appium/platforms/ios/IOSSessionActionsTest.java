@@ -145,6 +145,14 @@ class IOSSessionActionsTest {
         verify(driver).executeScript("mobile: clearApp", Map.of("bundleId", "com.example.app"));
     }
 
+    @DisplayName("Should execute the backgroundApp script for iOS")
+    @Test
+    void testBackgroundApp() {
+        iosSessionActions.backgroundApp(driver, 5);
+
+        verify(driver).executeScript("mobile: backgroundApp", Map.of("seconds", 5));
+    }
+
     @DisplayName("Should execute the acceptAlert script for iOS")
     @Test
     void testAcceptAlert() {
