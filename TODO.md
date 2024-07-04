@@ -13,8 +13,8 @@
 
 ## Gesture Actions
 
-* scroll *
-* swipe *
+* scroll
+* swipe
 
 ## Tap Actions
 
@@ -30,14 +30,14 @@
 * removeApp
 * installApp
 * clearApp
+* acceptAlert
+* dismissAlert
 
 ## To be implemented
 
-* alert (acceptAlert or dismissAlert) (Device Actions)
 * launchApp (startActivity) (Session Actions)
 * killApp (Session Actions)
 * pressButton
 * backgroundApp (Session Actions)
 * pinch (Gesture Actions)
-* scrollToElement
 * shake

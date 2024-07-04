@@ -180,4 +180,50 @@ public class IOSSessionActions implements SessionActionsInterface {
     public void clearApp(AppiumDriver driver, String appId) {
         driver.executeScript("mobile: clearApp", Map.of("bundleId", appId));
     }
+
+    /**
+     * Accepts an alert on the iOS device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     */
+    @Override
+    public void acceptAlert(AppiumDriver driver) {
+        driver.executeScript("mobile: alert", Map.of("action", "accept"));
+    }
+
+    /**
+     * Accepts an alert on the iOS device with a specified button label.
+     *
+     * @param driver      the AppiumDriver instance to interact with the device.
+     * @param buttonLabel the name of the button used to perform the chosen alert action.
+     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     */
+    @Override
+    public void acceptAlert(AppiumDriver driver, String buttonLabel) {
+        driver.executeScript("mobile: alert", Map.of("action", "accept", "buttonLabel", buttonLabel));
+    }
+
+    /**
+     * Dismisses an alert on the iOS device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     */
+    @Override
+    public void dismissAlert(AppiumDriver driver) {
+        driver.executeScript("mobile: alert", Map.of("action", "dismiss"));
+    }
+
+    /**
+     * Dismisses an alert on the iOS device with a specified button label.
+     *
+     * @param driver      the AppiumDriver instance to interact with the device.
+     * @param buttonLabel the name of the button used to perform the chosen alert action.
+     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     */
+    @Override
+    public void dismissAlert(AppiumDriver driver, String buttonLabel) {
+        driver.executeScript("mobile: alert", Map.of("action", "dismiss", "buttonLabel", buttonLabel));
+    }
 }

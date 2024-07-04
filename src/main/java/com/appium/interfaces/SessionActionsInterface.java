@@ -16,4 +16,8 @@ public interface SessionActionsInterface {
     void installApp(AppiumDriver driver, String appPath, int timeout);
     void installApp(AppiumDriver driver, String appPath, boolean checkVersion, int timeout);
     void clearApp(AppiumDriver driver, String appId);
+    void acceptAlert(AppiumDriver driver);
+    void acceptAlert(AppiumDriver driver, String buttonLabel);
+    void dismissAlert(AppiumDriver driver);
+    void dismissAlert(AppiumDriver driver, String buttonLabel);
 }

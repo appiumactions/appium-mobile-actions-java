@@ -144,4 +144,36 @@ class IOSSessionActionsTest {
 
         verify(driver).executeScript("mobile: clearApp", Map.of("bundleId", "com.example.app"));
     }
+
+    @DisplayName("Should execute the acceptAlert script for iOS")
+    @Test
+    void testAcceptAlert() {
+        iosSessionActions.acceptAlert(driver);
+
+        verify(driver).executeScript("mobile: alert", Map.of("action", "accept"));
+    }
+
+    @DisplayName("Should execute the acceptAlert script for iOS with button label")
+    @Test
+    void testAcceptAlertWithButtonLabel() {
+        iosSessionActions.acceptAlert(driver, "OK");
+
+        verify(driver).executeScript("mobile: alert", Map.of("action", "accept", "buttonLabel", "OK"));
+    }
+
+    @DisplayName("Should execute the dismissAlert script for iOS")
+    @Test
+    void testDismissAlert() {
+        iosSessionActions.dismissAlert(driver);
+
+        verify(driver).executeScript("mobile: alert", Map.of("action", "dismiss"));
+    }
+
+    @DisplayName("Should execute the dismissAlert script for iOS with button label")
+    @Test
+    void testDismissAlertWithButtonLabel() {
+        iosSessionActions.dismissAlert(driver, "Cancel");
+
+        verify(driver).executeScript("mobile: alert", Map.of("action", "dismiss", "buttonLabel", "Cancel"));
+    }
 }

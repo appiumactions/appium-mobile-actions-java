@@ -144,4 +144,36 @@ class AndroidSessionActionsTest {
 
         verify(driver).executeScript("mobile: clearApp", Map.of("appId", "com.example"));
     }
+
+    @DisplayName("Should execute the acceptAlert script for Android")
+    @Test
+    void testAcceptAlert() {
+        androidSessionActions.acceptAlert(driver);
+
+        verify(driver).executeScript("mobile: acceptAlert");
+    }
+
+    @DisplayName("Should execute the acceptAlert script for Android with button label")
+    @Test
+    void testAcceptAlertWithButtonLabel() {
+        androidSessionActions.acceptAlert(driver, "OK");
+
+        verify(driver).executeScript("mobile: acceptAlert", Map.of("buttonLabel", "OK"));
+    }
+
+    @DisplayName("Should execute the dismissAlert script for Android")
+    @Test
+    void testDismissAlert() {
+        androidSessionActions.dismissAlert(driver);
+
+        verify(driver).executeScript("mobile: dismissAlert");
+    }
+
+    @DisplayName("Should execute the dismissAlert script for Android with button label")
+    @Test
+    void testDismissAlertWithButtonLabel() {
+        androidSessionActions.dismissAlert(driver, "Cancel");
+
+        verify(driver).executeScript("mobile: dismissAlert", Map.of("buttonLabel", "Cancel"));
+    }
 }

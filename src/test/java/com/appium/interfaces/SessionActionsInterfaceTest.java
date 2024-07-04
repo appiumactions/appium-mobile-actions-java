@@ -134,4 +134,34 @@ class SessionActionsInterfaceTest {
         sessionActions.clearApp(driver, appId);
         verify(sessionActions, times(1)).clearApp(driver, appId);
     }
+
+    @DisplayName("Should call acceptAlert method")
+    @Test
+    void testAcceptAlert() {
+        sessionActions.acceptAlert(driver);
+        verify(sessionActions, times(1)).acceptAlert(driver);
+    }
+
+    @DisplayName("Should call acceptAlert method with button label")
+    @Test
+    void testAcceptAlertWithButtonLabel() {
+        String buttonLabel = "OK";
+        sessionActions.acceptAlert(driver, buttonLabel);
+        verify(sessionActions, times(1)).acceptAlert(driver, buttonLabel);
+    }
+
+    @DisplayName("Should call dismissAlert method")
+    @Test
+    void testDismissAlert() {
+        sessionActions.dismissAlert(driver);
+        verify(sessionActions, times(1)).dismissAlert(driver);
+    }
+
+    @DisplayName("Should call dismissAlert method with button label")
+    @Test
+    void testDismissAlertWithButtonLabel() {
+        String buttonLabel = "Cancel";
+        sessionActions.dismissAlert(driver, buttonLabel);
+        verify(sessionActions, times(1)).dismissAlert(driver, buttonLabel);
+    }
 }

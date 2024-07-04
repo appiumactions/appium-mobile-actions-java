@@ -193,4 +193,46 @@ public class SessionActions extends BaseActions {
     public void clearApp(String appId) {
         sessionActionsPlatform.clearApp(driver, appId);
     }
+
+    /**
+     * Accept alert on the device.
+     *
+     * @see com.appium.platforms.android.AndroidSessionActions#acceptAlert(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSSessionActions#acceptAlert(AppiumDriver)
+     */
+    public void acceptAlert() {
+        sessionActionsPlatform.acceptAlert(driver);
+    }
+
+    /**
+     * Accept alert on the device with a specified button label.
+     *
+     * @param buttonLabel the label of the button to be clicked.
+     * @see com.appium.platforms.android.AndroidSessionActions#acceptAlert(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSSessionActions#acceptAlert(AppiumDriver, String)
+     */
+    public void acceptAlert(String buttonLabel) {
+        sessionActionsPlatform.acceptAlert(driver, buttonLabel);
+    }
+
+    /**
+     * Dismiss alert on the device.
+     *
+     * @see com.appium.platforms.android.AndroidSessionActions#dismissAlert(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSSessionActions#dismissAlert(AppiumDriver)
+     */
+    public void dismissAlert() {
+        sessionActionsPlatform.dismissAlert(driver);
+    }
+
+    /**
+     * Dismiss alert on the device with a specified button label.
+     *
+     * @param buttonLabel the label of the button to be clicked.
+     * @see com.appium.platforms.android.AndroidSessionActions#dismissAlert(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSSessionActions#dismissAlert(AppiumDriver, String)
+     */
+    public void dismissAlert(String buttonLabel) {
+        sessionActionsPlatform.dismissAlert(driver, buttonLabel);
+    }
 }

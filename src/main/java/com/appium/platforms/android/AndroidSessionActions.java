@@ -181,4 +181,50 @@ public class AndroidSessionActions implements SessionActionsInterface {
     public void clearApp(AppiumDriver driver, String appId) {
         driver.executeScript("mobile: clearApp", Map.of("appId", appId));
     }
+
+    /**
+     * Accepts an alert on the device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
+     */
+    @Override
+    public void acceptAlert(AppiumDriver driver) {
+        driver.executeScript("mobile: acceptAlert");
+    }
+
+    /**
+     * Accepts an alert on the device with a specified button label.
+     *
+     * @param driver      the AppiumDriver instance to interact with the device.
+     * @param buttonLabel The name/text of the alert button to click in order to accept it.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
+     */
+    @Override
+    public void acceptAlert(AppiumDriver driver, String buttonLabel) {
+        driver.executeScript("mobile: acceptAlert", Map.of("buttonLabel", buttonLabel));
+    }
+
+    /**
+     * Dismisses an alert on the device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
+     */
+    @Override
+    public void dismissAlert(AppiumDriver driver) {
+        driver.executeScript("mobile: dismissAlert");
+    }
+
+    /**
+     * Dismisses an alert on the device with a specified button label.
+     *
+     * @param driver      the AppiumDriver instance to interact with the device.
+     * @param buttonLabel The name/text of the alert button to click in order to dismiss it.
+     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
+     */
+    @Override
+    public void dismissAlert(AppiumDriver driver, String buttonLabel) {
+        driver.executeScript("mobile: dismissAlert", Map.of("buttonLabel", buttonLabel));
+    }
 }
