@@ -11,11 +11,30 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
 
 ## Features
 
-- **Device Actions**: Lock, unlock, and check lock status of devices.
-- **Keyboard Actions**: Show/hide the keyboard and check its visibility.
-- **Gesture Actions**: Perform scroll and swipe gestures.
-- **Tap Actions**: Support for tap, double tap, and long tap gestures.
-- **Session Actions**: Manage app sessions including app termination, activation, installation, removal, and backgrounding. Also, manage alert dialogs.
+- **Device actions**: 
+    - lock
+    - unlock
+    - isLocked
+- **Keyboard actions**:
+    - hideKeyboard
+    - isKeyboardShown
+- **Gesture actions**:
+    - scroll
+    - swipe
+- **Tap actions**:
+    - tap
+    - doubleTap
+    - longTap
+- **Session actions**:
+    - terminateApp
+    - activateApp
+    - isAppInstalled
+    - removeApp
+    - installApp
+    - clearApp
+    - backgroundApp
+    - acceptAlert
+    - dismissAlert
 
 ## Getting Started
 
