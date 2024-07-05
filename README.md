@@ -80,6 +80,10 @@ For a detailed changelog, see the [CHANGELOG.md](CHANGELOG.md) file.
 
 Contributions are welcome! Please refer to the [contributing guidelines](CONTRIBUTING.md) for more information.
 
+## Code of conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing or engaging in discussions.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
