@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * Provides Android-specific implementations for scroll and swipe actions.
- * This class implements the {@link GestureActionsInterface} to provide methods
+ * This class implements the {@see GestureActionsInterface} to provide methods
  * driver.executeScript method with mobile-specific gestures.
  */
 public class AndroidGestureActions implements GestureActionsInterface {
@@ -20,7 +20,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param driver    The AppiumDriver instance used to perform the gesture.
      * @param direction The direction of the swipe (UP, DOWN, LEFT, RIGHT).
      * @param percent   The percentage of the screen the swipe should cover.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
     public void swipe(AppiumDriver driver, Direction direction, double percent) {
@@ -34,7 +34,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param direction  The direction of the swipe (UP, DOWN, LEFT, RIGHT).
      * @param percent    The percentage of the screen the swipe should cover.
      * @param webElement The WebElement on which the swipe gesture should be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
     public void swipe(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
@@ -48,7 +48,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param direction The direction of the swipe (UP, DOWN, LEFT, RIGHT).
      * @param percent   The percentage of the screen the swipe should cover.
      * @param speed     The speed of the swipe gesture.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
     public void swipe(AppiumDriver driver, Direction direction, double percent, int speed) {
@@ -63,7 +63,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param percent    The percentage of the screen the swipe should cover.
      * @param speed      The speed of the swipe gesture.
      * @param webElement The WebElement on which the swipe gesture should be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-swipegesture">UiAutomator2 - swipeGesture</a>
      */
     @Override
     public void swipe(AppiumDriver driver, Direction direction, double percent, int speed, WebElement webElement) {
@@ -76,7 +76,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param driver    The AppiumDriver instance used to perform the gesture.
      * @param direction The direction of the scroll (UP, DOWN, LEFT, RIGHT).
      * @param percent   The percentage of the screen the scroll should cover.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
      */
     @Override
     public void scroll(AppiumDriver driver, Direction direction, double percent) {
@@ -90,7 +90,7 @@ public class AndroidGestureActions implements GestureActionsInterface {
      * @param direction  The direction of the scroll (UP, DOWN, LEFT, RIGHT).
      * @param percent    The percentage of the screen the scroll should cover.
      * @param webElement The WebElement on which the scroll gesture should be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
      */
     @Override
     public void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {

@@ -13,7 +13,7 @@ public class AndroidKeyboardActions implements KeyboardActionsInterface {
      * Hides the keyboard if it is displayed on the Android device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-hidekeyboard">UiAutomator2 - hideKeyboard</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-hidekeyboard">UiAutomator2 - hideKeyboard</a>
      */
     @Override
     public void hideKeyboard(AppiumDriver driver) {
@@ -26,7 +26,7 @@ public class AndroidKeyboardActions implements KeyboardActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param keys   the keys to use to hide the keyboard. <b>Currently not supported on the Android platform.</b>
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-hidekeyboard">UiAutomator2 - hideKeyboard</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-hidekeyboard">UiAutomator2 - hideKeyboard</a>
      */
     @Override
     public void hideKeyboard(AppiumDriver driver, String[] keys) {
@@ -38,7 +38,7 @@ public class AndroidKeyboardActions implements KeyboardActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @return true if the keyboard is shown, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-iskeyboardshown">UiAutomator2 - isKeyboardShown</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-iskeyboardshown">UiAutomator2 - isKeyboardShown</a>
      */
     @Override
     public boolean isKeyboardShown(AppiumDriver driver) {

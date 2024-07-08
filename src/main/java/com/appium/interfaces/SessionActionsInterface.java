@@ -2,8 +2,6 @@ package com.appium.interfaces;
 
 import io.appium.java_client.AppiumDriver;
 
-import java.time.Duration;
-
 public interface SessionActionsInterface {
     void terminateApp(AppiumDriver driver, String appId);
     void terminateApp(AppiumDriver driver, String appId, int timeout);

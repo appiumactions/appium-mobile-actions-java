@@ -15,7 +15,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      * Locks the device.
      *
      * @param driver The Appium driver instance.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-lock">UiAutomator2 - lock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-lock">UiAutomator2 - lock</a>
      */
     @Override
     public void lock(AppiumDriver driver) {
@@ -27,7 +27,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      *
      * @param driver  The Appium driver instance.
      * @param seconds The number of seconds after which to unlock the device. Set to 0 or leave it empty to require manual unlock.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-lock">UiAutomator2 - lock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-lock">UiAutomator2 - lock</a>
      */
     @Override
     public void lock(AppiumDriver driver, int seconds) {
@@ -40,7 +40,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      * @param driver The Appium driver instance.
      * @param key    The key to unlock the device.
      * @param type   The type of the key.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type) {
@@ -54,7 +54,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      * @param key      The key to unlock the device.
      * @param type     The type of the key.
      * @param strategy The strategy to use for unlocking.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, String strategy) {
@@ -68,7 +68,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      * @param key       The key to unlock the device.
      * @param type      The type of the key.
      * @param timeoutMs The timeout in milliseconds.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, int timeoutMs) {
@@ -83,7 +83,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      * @param type      The type of the key.
      * @param strategy  The strategy to use for unlocking.
      * @param timeoutMs The timeout in milliseconds.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-unlock">UiAutomator2 - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, String strategy, int timeoutMs) {
@@ -95,7 +95,7 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      *
      * @param driver The Appium driver instance.
      * @return True if the device is locked, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-islocked">UiAutomator2 - isLocked</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-islocked">UiAutomator2 - isLocked</a>
      */
     @Override
     public boolean isLocked(AppiumDriver driver) {

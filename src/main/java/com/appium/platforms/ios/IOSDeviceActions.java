@@ -15,7 +15,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      * Locks on the iOS device.
      *
      * @param driver The Appium driver instance.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-lock">XCUITest - lock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-lock">XCUITest - lock</a>
      */
     @Override
     public void lock(AppiumDriver driver) {
@@ -27,7 +27,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      *
      * @param driver  The Appium driver instance.
      * @param seconds The number of seconds after which to unlock the device. Set to 0 or leave it.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-lock">XCUITest - lock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-lock">XCUITest - lock</a>
      */
     @Override
     public void lock(AppiumDriver driver, int seconds) {
@@ -40,7 +40,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      * @param driver The Appium driver instance.
      * @param key    The key to unlock the device. <b>Currently not supported on the iOS platform.</b>
      * @param type   The type of the key. <b>Currently not supported on the iOS platform.</b>
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type) {
@@ -54,7 +54,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      * @param key      The key to unlock the device. <b>Currently not supported on the iOS platform.</b>
      * @param type     The type of the key. <b>Currently not supported on the iOS platform.</b>
      * @param strategy The strategy to use for unlocking. <b>Currently not supported on the iOS platform.</b>
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, String strategy) {
@@ -68,7 +68,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      * @param key       The key to unlock the device. <b>Currently not supported on the iOS platform.</b>
      * @param type      The type of the key. <b>Currently not supported on the iOS platform.</b>
      * @param timeoutMs The timeout in milliseconds. <b>Currently not supported on the iOS platform.</b>
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, int timeoutMs) {
@@ -83,7 +83,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      * @param type      The type of the key. <b>Currently not supported on the iOS platform.</b>
      * @param strategy  The strategy to use for unlocking. <b>Currently not supported on the iOS platform.</b>
      * @param timeoutMs The timeout in milliseconds. <b>Currently not supported on the iOS platform.</b>
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-unlock">XCUITest - unlock</a>
      */
     @Override
     public void unlock(AppiumDriver driver, String key, String type, String strategy, int timeoutMs) {
@@ -95,7 +95,7 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      *
      * @param driver The Appium driver instance.
      * @return True if the device is locked, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-islocked">XCUITest - isLocked</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-islocked">XCUITest - isLocked</a>
      */
     @Override
     public boolean isLocked(AppiumDriver driver) {

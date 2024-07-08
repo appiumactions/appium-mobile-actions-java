@@ -17,7 +17,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the appPackage to be terminated.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-terminateapp">UiAutomator2 - terminateApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-terminateapp">UiAutomator2 - terminateApp</a>
      */
     @Override
     public void terminateApp(AppiumDriver driver, String appId) {
@@ -30,7 +30,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appId   the appPackage to be terminated.
      * @param timeout the timeout in milliseconds to wait until the app is terminated. 500ms by default.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-terminateapp">UiAutomator2 - terminateApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-terminateapp">UiAutomator2 - terminateApp</a>
      */
     @Override
     public void terminateApp(AppiumDriver driver, String appId, int timeout) {
@@ -42,7 +42,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the appPackage to be activated.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-activateapp">UiAutomator2 - activateApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-activateapp">UiAutomator2 - activateApp</a>
      */
     @Override
     public void activateApp(AppiumDriver driver, String appId) {
@@ -55,7 +55,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the appPackage to be checked.
      * @return true if the app is installed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-isappinstalled">UiAutomator2 - isAppInstalled</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-isappinstalled">UiAutomator2 - isAppInstalled</a>
      */
     @Override
     public boolean isAppInstalled(AppiumDriver driver, String appId) {
@@ -68,7 +68,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the appPackage to be removed.
      * @return true if the app is removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId) {
@@ -82,7 +82,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param appId   the appPackage to be removed.
      * @param timeout the timeout in milliseconds to wait until the app is terminated. 20000ms by default.
      * @return true if the app is removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, int timeout) {
@@ -96,7 +96,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param appId    the appPackage to be removed.
      * @param keepData set to true in order to keep the application data and cache folders after uninstall.
      * @return true if the app is removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, boolean keepData) {
@@ -111,7 +111,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param timeout  the timeout in milliseconds to wait until the app is terminated. 20000ms by default.
      * @param keepData set to true in order to keep the application data and cache folders after uninstall.
      * @return true if the app is removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-removeapp">UiAutomator2 - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, int timeout, boolean keepData) {
@@ -123,7 +123,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appPath the local .apk(s) path on the server filesystem or a remote url.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath) {
@@ -136,7 +136,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param driver       the AppiumDriver instance to interact with the device.
      * @param appPath      the local .apk(s) path on the server filesystem or a remote url.
      * @param checkVersion set to true, in order to skip the application installation if the device under test has a greater or equal to the application version.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, boolean checkVersion) {
@@ -149,7 +149,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appPath the local .apk(s) path on the server filesystem or a remote url.
      * @param timeout the timeout in milliseconds to wait until the app is installed. 6000ms by default.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, int timeout) {
@@ -163,7 +163,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * @param appPath      the local .apk(s) path on the server filesystem or a remote url.
      * @param checkVersion set to true, in order to skip the application installation if the device under test has a greater or equal to the application version.
      * @param timeout      the timeout in milliseconds to wait until the app is installed. 6000ms by default.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-installapp">UiAutomator2 - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, boolean checkVersion, int timeout) {
@@ -175,7 +175,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the appPackage to be cleared.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-clearapp">UiAutomator2 - clearApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-clearapp">UiAutomator2 - clearApp</a>
      */
     @Override
     public void clearApp(AppiumDriver driver, String appId) {
@@ -187,7 +187,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param seconds the amount of seconds to wait between putting the app to background and restoring it.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-backgroundapp">UiAutomator2 - backgroundApp</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-backgroundapp">UiAutomator2 - backgroundApp</a>
      */
     @Override
     public void backgroundApp(AppiumDriver driver, int seconds) {
@@ -198,7 +198,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * Accepts an alert on the device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
      */
     @Override
     public void acceptAlert(AppiumDriver driver) {
@@ -210,7 +210,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver      the AppiumDriver instance to interact with the device.
      * @param buttonLabel The name/text of the alert button to click in order to accept it.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-acceptalert">UiAutomator2 - acceptAlert</a>
      */
     @Override
     public void acceptAlert(AppiumDriver driver, String buttonLabel) {
@@ -221,7 +221,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      * Dismisses an alert on the device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
      */
     @Override
     public void dismissAlert(AppiumDriver driver) {
@@ -233,7 +233,7 @@ public class AndroidSessionActions implements SessionActionsInterface {
      *
      * @param driver      the AppiumDriver instance to interact with the device.
      * @param buttonLabel The name/text of the alert button to click in order to dismiss it.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-dismissalert">UiAutomator2 - dismissAlert</a>
      */
     @Override
     public void dismissAlert(AppiumDriver driver, String buttonLabel) {

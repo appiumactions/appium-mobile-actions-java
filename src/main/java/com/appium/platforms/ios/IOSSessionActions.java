@@ -16,7 +16,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the bundleId of the app to be terminated.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-terminateapp">XCUITest - terminateApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-terminateapp">XCUITest - terminateApp</a>
      */
     @Override
     public void terminateApp(AppiumDriver driver, String appId) {
@@ -29,7 +29,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appId   the bundleId of the app to be terminated.
      * @param timeout the timeout in seconds after which the app will be terminated. <b>Currently not supported on the iOS platform.</b>
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-terminateapp">XCUITest - terminateApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-terminateapp">XCUITest - terminateApp</a>
      */
     @Override
     public void terminateApp(AppiumDriver driver, String appId, int timeout) {
@@ -41,7 +41,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the bundleId of the app to be activated.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-activateapp">XCUITest - activateApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-activateapp">XCUITest - activateApp</a>
      */
     @Override
     public void activateApp(AppiumDriver driver, String appId) {
@@ -54,7 +54,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the bundleId of the app to be checked.
      * @return true if the app is installed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-isappinstalled">XCUITest - isAppInstalled</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-isappinstalled">XCUITest - isAppInstalled</a>
      */
     @Override
     public boolean isAppInstalled(AppiumDriver driver, String appId) {
@@ -67,7 +67,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the bundleId of the app to be removed.
      * @return true if the app was successfully removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId) {
@@ -81,7 +81,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param appId   the bundleId of the app to be removed.
      * @param timeout the timeout in seconds after which the app will be removed. <b>Currently not supported on the iOS platform.</b>
      * @return true if the app was successfully removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, int timeout) {
@@ -95,7 +95,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param appId    the bundleId of the app to be removed.
      * @param keepData a boolean value indicating whether to keep the app data or not. <b>Currently not supported on the iOS platform.</b>
      * @return true if the app was successfully removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, boolean keepData) {
@@ -110,7 +110,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param timeout  the timeout in seconds after which the app will be removed. <b>Currently not supported on the iOS platform.</b>
      * @param keepData a boolean value indicating whether to keep the app data or not. <b>Currently not supported on the iOS platform.</b>
      * @return true if the app was successfully removed, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-removeapp">XCUITest - removeApp</a>
      */
     @Override
     public boolean removeApp(AppiumDriver driver, String appId, int timeout, boolean keepData) {
@@ -122,7 +122,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appPath the path of the app to be installed.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath) {
@@ -135,7 +135,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param driver       the AppiumDriver instance to interact with the device.
      * @param appPath      the path of the app to be installed.
      * @param checkVersion if set to true, it will make xcuitest driver to verify whether the app version currently installed on the device under test is older than the one, which is provided as app value.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, boolean checkVersion) {
@@ -148,7 +148,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param appPath the path of the app to be installed.
      * @param timeout The maximum time to wait until app install is finished in milliseconds on real devices. If the capability is not provided then equals to 240000ms.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, int timeout) {
@@ -162,7 +162,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * @param appPath      the path of the app to be installed.
      * @param checkVersion if set to true, it will make xcuitest driver to verify whether the app version currently installed on the device under test is older than the one, which is provided as app value.
      * @param timeout      The maximum time to wait until app install is finished in milliseconds on real devices. If the capability is not provided then equals to 240000ms.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>
      */
     @Override
     public void installApp(AppiumDriver driver, String appPath, boolean checkVersion, int timeout) {
@@ -174,7 +174,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param appId  the bundleId of the app to be cleared.
-     * @link <a href="@link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-installapp">XCUITest - installApp</a>">XCUITest - clearApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-clearapp">XCUITest - clearApp</a>
      */
     @Override
     public void clearApp(AppiumDriver driver, String appId) {
@@ -186,7 +186,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver  the AppiumDriver instance to interact with the device.
      * @param seconds the amount of seconds to wait between putting the app to background and restoring it.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-backgroundapp">XCUITest - backgroundApp</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-backgroundapp">XCUITest - backgroundApp</a>
      */
     @Override
     public void backgroundApp(AppiumDriver driver, int seconds) {
@@ -197,7 +197,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * Accepts an alert on the iOS device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
      */
     @Override
     public void acceptAlert(AppiumDriver driver) {
@@ -209,7 +209,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver      the AppiumDriver instance to interact with the device.
      * @param buttonLabel the name of the button used to perform the chosen alert action.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
      */
     @Override
     public void acceptAlert(AppiumDriver driver, String buttonLabel) {
@@ -220,7 +220,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      * Dismisses an alert on the iOS device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
      */
     @Override
     public void dismissAlert(AppiumDriver driver) {
@@ -232,7 +232,7 @@ public class IOSSessionActions implements SessionActionsInterface {
      *
      * @param driver      the AppiumDriver instance to interact with the device.
      * @param buttonLabel the name of the button used to perform the chosen alert action.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-alert">XCUITest - alert</a>
      */
     @Override
     public void dismissAlert(AppiumDriver driver, String buttonLabel) {

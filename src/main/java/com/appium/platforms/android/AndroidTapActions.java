@@ -19,7 +19,7 @@ public class AndroidTapActions implements TapActionsInterface {
      *
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-clickgesture">UiAutomator2 - clickGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-clickgesture">UiAutomator2 - clickGesture</a>
      */
     @Override
     public void tap(AppiumDriver driver, WebElement webElement) {
@@ -32,7 +32,7 @@ public class AndroidTapActions implements TapActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param x      the x-coordinate on the screen where the tap action is to be performed.
      * @param y      the y-coordinate on the screen where the tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-clickgesture">UiAutomator2 - clickGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-clickgesture">UiAutomator2 - clickGesture</a>
      */
     @Override
     public void tap(AppiumDriver driver, int x, int y) {
@@ -44,7 +44,7 @@ public class AndroidTapActions implements TapActionsInterface {
      *
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the double tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-doubleclickgesture">UiAutomator2 - doubleClickgesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-doubleclickgesture">UiAutomator2 - doubleClickgesture</a>
      */
     @Override
     public void doubleTap(AppiumDriver driver, WebElement webElement) {
@@ -57,7 +57,7 @@ public class AndroidTapActions implements TapActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param x      the x-coordinate on the screen where the double tap action is to be performed.
      * @param y      the y-coordinate on the screen where the double tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-doubleclickgesture">UiAutomator2 - doubleClickgesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-doubleclickgesture">UiAutomator2 - doubleClickgesture</a>
      */
     @Override
     public void doubleTap(AppiumDriver driver, int x, int y) {
@@ -70,7 +70,7 @@ public class AndroidTapActions implements TapActionsInterface {
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the long tap action is to be performed.
      * @param duration   the Duration in seconds for which the long tap action is to be held.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-longclickgesture">UiAutomator2 - longClickGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-longclickgesture">UiAutomator2 - longClickGesture</a>
      */
     @Override
     public void longTap(AppiumDriver driver, WebElement webElement, Duration duration) {
@@ -84,7 +84,7 @@ public class AndroidTapActions implements TapActionsInterface {
      * @param x        the x-coordinate on the screen where the long tap action is to be performed.
      * @param y        the y-coordinate on the screen where the long tap action is to be performed.
      * @param duration the Duration in seconds for which the long tap action is to be held.
-     * @link <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-longclickgesture">UiAutomator2 - longClickGesture</a>
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-longclickgesture">UiAutomator2 - longClickGesture</a>
      */
     @Override
     public void longTap(AppiumDriver driver, int x, int y, Duration duration) {

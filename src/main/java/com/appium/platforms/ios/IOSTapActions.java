@@ -19,7 +19,7 @@ public class IOSTapActions implements TapActionsInterface {
      *
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-tap">XCUITest - tap</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-tap">XCUITest - tap</a>
      */
     @Override
     public void tap(AppiumDriver driver, WebElement webElement) {
@@ -32,7 +32,7 @@ public class IOSTapActions implements TapActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param x      the x-coordinate on the screen where the tap action is to be performed.
      * @param y      the y-coordinate on the screen where the tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-tap">XCUITest - tap</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-tap">XCUITest - tap</a>
      */
     @Override
     public void tap(AppiumDriver driver, int x, int y) {
@@ -44,7 +44,7 @@ public class IOSTapActions implements TapActionsInterface {
      *
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the double tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-doubletap">XCUITest - doubleTap</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-doubletap">XCUITest - doubleTap</a>
      */
     @Override
     public void doubleTap(AppiumDriver driver, WebElement webElement) {
@@ -57,7 +57,7 @@ public class IOSTapActions implements TapActionsInterface {
      * @param driver the AppiumDriver instance to interact with the device.
      * @param x      the x-coordinate on the screen where the double tap action is to be performed.
      * @param y      the y-coordinate on the screen where the double tap action is to be performed.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-doubletap">XCUITest - doubleTap</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-doubletap">XCUITest - doubleTap</a>
      */
     @Override
     public void doubleTap(AppiumDriver driver, int x, int y) {
@@ -70,7 +70,7 @@ public class IOSTapActions implements TapActionsInterface {
      * @param driver     the AppiumDriver instance to interact with the device.
      * @param webElement the WebElement on which the long tap action is to be performed.
      * @param duration   the Duration in seconds for which the long tap action is to be held.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-touchandhold">XCUITest - touchAndHold</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-touchandhold">XCUITest - touchAndHold</a>
      */
     @Override
     public void longTap(AppiumDriver driver, WebElement webElement, Duration duration) {
@@ -84,7 +84,7 @@ public class IOSTapActions implements TapActionsInterface {
      * @param x        the x-coordinate on the screen where the long tap action is to be performed.
      * @param y        the y-coordinate on the screen where the long tap action is to be performed.
      * @param duration the Duration in seconds for which the long tap action is to be held.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-touchandhold">XCUITest - touchAndHold</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-touchandhold">XCUITest - touchAndHold</a>
      */
     @Override
     public void longTap(AppiumDriver driver, int x, int y, Duration duration) {

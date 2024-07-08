@@ -3,10 +3,56 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.appiumactions</groupId>
+    <artifactId>appium-mobile-actions</artifactId>
+    <version>1.0.0</version>
 
-    <groupId>com.appium.actions</groupId>
-    <artifactId>appium-mobile-actions-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>${project.groupId}:${project.groupId}</name>
+    <description>
+        The Appium Mobile Actions Java project provides a comprehensive suite of tools and libraries designed to enhance
+        and simplify the development of mobile automation tests using Appium with Java.
+        It aims to offer a robust solution for automating mobile application testing on both Android and iOS platforms,
+        focusing on ease of use, scalability, and integration with modern development workflows.
+        By abstracting complex Appium functionalities into simpler, more manageable components, this project enables
+        developers and QA engineers to write more efficient and maintainable test scripts, thereby improving the quality
+        and reliability of mobile applications.
+    </description>
+    <url>https://github.com/appium-actions/appium-mobile-actions-java</url>
+
+    <scm>
+        <connection>scm:git:git@github.com:appium-actions/appium-mobile-actions-java.git</connection>
+        <developerConnection>scm:git:ssh@github.com:appium-actions/appium-mobile-actions-java.git</developerConnection>
+        <url>https://github.com/appium-actions/appium-mobile-actions-java/tree/main</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <developers>
+        <developer>
+            <id>Matheeusb</id>
+            <name>Matheus Bereta</name>
+            <email>matheus_bereta@hotmail.com</email>
+            <organization>Appium Actions</organization>
+            <organizationUrl>https://github.com/appium-actions</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -58,7 +104,49 @@
                     <publishingServerId>central</publishingServerId>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>

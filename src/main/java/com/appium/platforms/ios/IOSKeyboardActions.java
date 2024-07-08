@@ -15,7 +15,7 @@ public class IOSKeyboardActions implements KeyboardActionsInterface {
      * Hides the keyboard if it is displayed on the iOS device.
      *
      * @param driver the AppiumDriver instance to interact with the device.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-hidekeyboard">XCUITest - hideKeyboard</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-hidekeyboard">XCUITest - hideKeyboard</a>
      */
     @Override
     public void hideKeyboard(AppiumDriver driver) {
@@ -28,7 +28,7 @@ public class IOSKeyboardActions implements KeyboardActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @param keys   the keys to use to hide the keyboard. Example: ["done", "next"]
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-hidekeyboard">XCUITest - hideKeyboard</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-hidekeyboard">XCUITest - hideKeyboard</a>
      */
     @Override
     public void hideKeyboard(AppiumDriver driver, String[] keys) {
@@ -40,7 +40,7 @@ public class IOSKeyboardActions implements KeyboardActionsInterface {
      *
      * @param driver the AppiumDriver instance to interact with the device.
      * @return true if the keyboard is shown, false otherwise.
-     * @link <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-iskeyboardshown">XCUITest - isKeyboardShown</a>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-iskeyboardshown">XCUITest - isKeyboardShown</a>
      */
     @Override
     public boolean isKeyboardShown(AppiumDriver driver) {
