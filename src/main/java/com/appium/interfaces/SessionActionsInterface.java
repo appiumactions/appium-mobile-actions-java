@@ -21,4 +21,6 @@ public interface SessionActionsInterface {
     void acceptAlert(AppiumDriver driver, String buttonLabel);
     void dismissAlert(AppiumDriver driver);
     void dismissAlert(AppiumDriver driver, String buttonLabel);
+    void deepLink(AppiumDriver driver, String url, String appId);
+    void deepLink(AppiumDriver driver, String url, String appId, boolean waitForLaunch);
 }

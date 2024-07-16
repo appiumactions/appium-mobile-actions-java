@@ -184,4 +184,20 @@ class IOSSessionActionsTest {
 
         verify(driver).executeScript("mobile: alert", Map.of("action", "dismiss", "buttonLabel", "Cancel"));
     }
+
+    @DisplayName("Should execute the deepLink script for iOS")
+    @Test
+    void testDeepLink() {
+        iosSessionActions.deepLink(driver, "myapp://path", "com.myapp.yolo");
+
+        verify(driver).executeScript("mobile: deepLink", Map.of("url", "myapp://path", "bundleId", "com.myapp.yolo"));
+    }
+
+    @DisplayName("Should execute the deepLink script for iOS with waitForLaunch")
+    @Test
+    void testDeepLinkWithWaitForLaunch() {
+        iosSessionActions.deepLink(driver, "myapp://path", "com.myapp.yolo", true);
+
+        verify(driver).executeScript("mobile: deepLink", Map.of("url", "myapp://path", "bundleId", "com.myapp.yolo"));
+    }
 }
