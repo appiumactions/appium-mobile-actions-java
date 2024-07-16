@@ -70,4 +70,11 @@ class DeviceActionsInterfaceTest {
         deviceActionsInterface.isLocked(driver);
         verify(deviceActionsInterface, times(1)).isLocked(driver);
     }
+
+    @DisplayName("Should call batteryInfo method")
+    @Test
+    void testBatteryInfo() {
+        deviceActionsInterface.batteryInfo(driver);
+        verify(deviceActionsInterface, times(1)).batteryInfo(driver);
+    }
 }
