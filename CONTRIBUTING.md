@@ -185,10 +185,10 @@ If you want to contribute to the project, you can follow these steps to set up y
 9. Commit your changes: `git commit -am 'feat: Add new feature'`. Please follow
    the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 10. Push to the branch: `git push origin feature/my-branch-name` or `git push origin bugfix/my-branch-name`.
-11. Submit a pull request to the `main` branch.
+11. Submit a pull request to the `release` branch.
 12. Wait for the maintainers to review your pull request.
 13. Make changes if necessary and push them to the same branch.
-14. Once the pull request is approved, you can pull the changes from `main` and delete your feature branch.
+14. Once the pull request is approved, you can pull the changes from `release` and delete your feature branch.
 
 ## Styleguides
 

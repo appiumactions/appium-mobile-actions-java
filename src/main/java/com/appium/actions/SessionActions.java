@@ -186,7 +186,7 @@ public class SessionActions extends BaseActions {
     /**
      * Clears the app data on the device.
      *
-     * @param appId the bundleId of the app to be cleared.
+     * @param appId the appPackage or bundleId of the app to be removed.
      * @see com.appium.platforms.android.AndroidSessionActions#clearApp(AppiumDriver, String)
      * @see com.appium.platforms.ios.IOSSessionActions#clearApp(AppiumDriver, String)
      */
@@ -245,5 +245,30 @@ public class SessionActions extends BaseActions {
      */
     public void dismissAlert(String buttonLabel) {
         sessionActionsPlatform.dismissAlert(driver, buttonLabel);
+    }
+
+    /**
+     * Opens a deep link on the device.
+     *
+     * @param url   the deep link URL to be opened.
+     * @param appId the appPackage or bundleId of the app to be opened.
+     * @see com.appium.platforms.android.AndroidSessionActions#deepLink(AppiumDriver, String, String)
+     * @see com.appium.platforms.ios.IOSSessionActions#deepLink(AppiumDriver, String, String)
+     */
+    public void deepLink(String url, String appId) {
+        sessionActionsPlatform.deepLink(driver, url, appId);
+    }
+
+    /**
+     * Opens a deep link on the device with an option to wait for the app to be launched.
+     *
+     * @param url           the deep link URL to be opened.
+     * @param appId         the appPackage or bundleId of the app to be opened.
+     * @param waitForLaunch if set to true, it will make the driver to wait until the app is launched. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @see com.appium.platforms.android.AndroidSessionActions#deepLink(AppiumDriver, String, String, boolean)
+     * @see com.appium.platforms.ios.IOSSessionActions#deepLink(AppiumDriver, String, String, boolean)
+     */
+    public void deepLink(String url, String appId, boolean waitForLaunch) {
+        sessionActionsPlatform.deepLink(driver, url, appId, waitForLaunch);
     }
 }

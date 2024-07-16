@@ -171,4 +171,23 @@ class SessionActionsInterfaceTest {
         sessionActions.dismissAlert(driver, buttonLabel);
         verify(sessionActions, times(1)).dismissAlert(driver, buttonLabel);
     }
+
+    @DisplayName("Should call deepLink method")
+    @Test
+    void testDeepLink() {
+        String url = "example://path";
+        String appId = "com.example.app";
+        sessionActions.deepLink(driver, url, appId);
+        verify(sessionActions, times(1)).deepLink(driver, url, appId);
+    }
+
+    @DisplayName("Should call deepLink method with waitForLaunch")
+    @Test
+    void testDeepLinkWithWaitForLaunch() {
+        String url = "example://path";
+        String appId = "com.example.app";
+        boolean waitForLaunch = true;
+        sessionActions.deepLink(driver, url, appId, waitForLaunch);
+        verify(sessionActions, times(1)).deepLink(driver, url, appId, waitForLaunch);
+    }
 }
