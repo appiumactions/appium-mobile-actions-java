@@ -1,6 +1,7 @@
 package com.appium.actions;
 
 import com.appium.interfaces.DeviceActionsInterface;
+import com.appium.models.BatteryInfoModel;
 import com.appium.platforms.android.AndroidDeviceActions;
 import com.appium.platforms.ios.IOSDeviceActions;
 import com.google.common.annotations.VisibleForTesting;
@@ -117,5 +118,16 @@ public class DeviceActions extends BaseActions {
      */
     public boolean isLocked() {
         return deviceActionsPlatform.isLocked(driver);
+    }
+
+    /**
+     * Gets the battery information of the device.
+     *
+     * @return The battery information of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#batteryInfo(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSDeviceActions#batteryInfo(AppiumDriver)
+     */
+    public BatteryInfoModel batteryInfo() {
+        return deviceActionsPlatform.batteryInfo(driver);
     }
 }

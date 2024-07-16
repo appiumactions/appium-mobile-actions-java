@@ -1,5 +1,6 @@
 package com.appium.platforms.android;
 
+import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -9,8 +10,8 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class AndroidDeviceActionsTest {
@@ -84,5 +85,16 @@ class AndroidDeviceActionsTest {
         when(driver.executeScript("mobile: isLocked")).thenReturn(false);
         assertFalse(androidDeviceActions.isLocked(driver));
         verify(driver, times(1)).executeScript("mobile: isLocked");
+    }
+
+    @DisplayName("Should return BatteryInfoModel when batteryInfo is called")
+    @Test
+    void testBatteryInfo() {
+        when(driver.executeScript("mobile: batteryInfo")).thenReturn(Map.of("level", 0.95, "state", 2));
+        final BatteryInfoModel batteryInfo = androidDeviceActions.batteryInfo(driver);
+
+        assertEquals(0.95, batteryInfo.getLevel());
+        assertEquals(2, batteryInfo.getState());
+        verify(driver, times(1)).executeScript("mobile: batteryInfo");
     }
 }
