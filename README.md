@@ -15,6 +15,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - lock
     - unlock
     - isLocked
+    - batteryInfo
 - **Keyboard actions**:
     - hideKeyboard
     - isKeyboardShown
@@ -35,6 +36,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - backgroundApp
     - acceptAlert
     - dismissAlert
+    - deepLink
 
 ## Getting Started
 
