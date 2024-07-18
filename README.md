@@ -44,9 +44,9 @@ Add the following dependency to your `pom.xml` file:
 
 ```xml
 <dependency>
-    <groupId>com.appium.actions</groupId>
-    <artifactId>appium-mobile-actions-java</artifactId>
-    <version>LATEST</version>
+  <groupId>io.github.appiumactions</groupId>
+  <artifactId>appium-mobile-actions</artifactId>
+  <version>LATEST</version>
 </dependency>
 ```
 
@@ -54,7 +54,7 @@ or if you are using Gradle, add the following to your `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation 'com.appium.actions:appium-mobile-actions-java:+'
+    implementation 'io.github.appiumactions:appium-mobile-actions:+'
 }
 ```
 
