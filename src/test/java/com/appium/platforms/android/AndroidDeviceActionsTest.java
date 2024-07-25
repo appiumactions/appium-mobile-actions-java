@@ -11,7 +11,6 @@ import org.mockito.MockitoAnnotations;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class AndroidDeviceActionsTest {
@@ -96,5 +95,17 @@ class AndroidDeviceActionsTest {
         assertEquals(0.95, batteryInfo.getLevel());
         assertEquals(2, batteryInfo.getState());
         verify(driver, times(1)).executeScript("mobile: batteryInfo");
+    }
+
+    @DisplayName("Should return Map with device info when deviceInfo is called")
+    @Test
+    void testDeviceInfo() {
+        when(driver.executeScript("mobile: deviceInfo")).thenReturn(Map.of("platformName", "Android", "platformVersion", "11"));
+        final Map<String, Object> deviceInfo = androidDeviceActions.deviceInfo(driver);
+
+        assertEquals("Android", deviceInfo.get("platformName"));
+        assertEquals("11", deviceInfo.get("platformVersion"));
+        verify(driver, times(1)).executeScript("mobile: deviceInfo");
+
     }
 }

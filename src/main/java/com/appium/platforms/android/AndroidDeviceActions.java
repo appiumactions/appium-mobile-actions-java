@@ -112,8 +112,18 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
      */
     @Override
     public BatteryInfoModel batteryInfo(AppiumDriver driver) {
-        Map batteryInfo = (Map) driver.executeScript("mobile: batteryInfo");
+        return BatteryInfoModel.fromMap((Map) driver.executeScript("mobile: batteryInfo"));
+    }
 
-        return BatteryInfoModel.fromMap(batteryInfo);
+    /**
+     * Gets the device information of the Android device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The device information of the device.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-deviceinfo">UiAutomator2 - deviceInfo</a>
+     */
+    @Override
+    public Map<String, Object> deviceInfo(AppiumDriver driver) {
+        return (Map<String, Object>) driver.executeScript("mobile: deviceInfo");
     }
 }

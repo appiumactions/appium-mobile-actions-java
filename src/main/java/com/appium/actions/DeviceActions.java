@@ -8,6 +8,8 @@ import com.google.common.annotations.VisibleForTesting;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 
+import java.util.Map;
+
 /**
  * This class provides actions that can be performed on a device.
  * It uses the appropriate platform-specific implementation of the DeviceActionsInterface.
@@ -129,5 +131,16 @@ public class DeviceActions extends BaseActions {
      */
     public BatteryInfoModel batteryInfo() {
         return deviceActionsPlatform.batteryInfo(driver);
+    }
+
+    /**
+     * Gets the device information.
+     *
+     * @return The device information.
+     * @see com.appium.platforms.android.AndroidDeviceActions#deviceInfo(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSDeviceActions#deviceInfo(AppiumDriver)
+     */
+    public Map<String, Object> deviceInfo() {
+        return deviceActionsPlatform.deviceInfo(driver);
     }
 }

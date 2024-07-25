@@ -16,6 +16,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - unlock
     - isLocked
     - batteryInfo
+    - deviceInfo
 - **Keyboard actions**:
     - hideKeyboard
     - isKeyboardShown

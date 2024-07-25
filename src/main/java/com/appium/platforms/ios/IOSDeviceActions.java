@@ -112,8 +112,18 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      */
     @Override
     public BatteryInfoModel batteryInfo(AppiumDriver driver) {
-        Map batteryInfo = (Map) driver.executeScript("mobile: batteryInfo");
+        return BatteryInfoModel.fromMap((Map) driver.executeScript("mobile: batteryInfo"));
+    }
 
-        return BatteryInfoModel.fromMap(batteryInfo);
+    /**
+     * Gets the device information of the iOS device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The device information of the device.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-deviceinfo">XCUITest - deviceInfo</a>
+     */
+    @Override
+    public Map<String, Object> deviceInfo(AppiumDriver driver) {
+        return (Map<String, Object>) driver.executeScript("mobile: deviceInfo");
     }
 }

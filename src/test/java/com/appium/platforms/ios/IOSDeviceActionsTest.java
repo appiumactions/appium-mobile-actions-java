@@ -94,4 +94,15 @@ class IOSDeviceActionsTest {
         assertEquals(2, batteryInfo.getState());
         verify(driver, times(1)).executeScript("mobile: batteryInfo");
     }
+
+    @DisplayName("Should return device info when deviceInfo is called")
+    @Test
+    void testDeviceInfo() {
+        when(driver.executeScript("mobile: deviceInfo")).thenReturn(Map.of("deviceName", "iPhone 12", "platformName", "iOS"));
+        final Map<String, Object> deviceInfo = iosDeviceActions.deviceInfo(driver);
+
+        assertEquals("iPhone 12", deviceInfo.get("deviceName"));
+        assertEquals("iOS", deviceInfo.get("platformName"));
+        verify(driver, times(1)).executeScript("mobile: deviceInfo");
+    }
 }
