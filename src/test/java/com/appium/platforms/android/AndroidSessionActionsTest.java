@@ -185,4 +185,20 @@ class AndroidSessionActionsTest {
 
         verify(driver).executeScript("mobile: dismissAlert", Map.of("buttonLabel", "Cancel"));
     }
+
+    @DisplayName("Should execute the deepLink script for Android")
+    @Test
+    void testDeepLink() {
+        androidSessionActions.deepLink(driver, "example://path", "com.mycompany.myapp");
+
+        verify(driver).executeScript("mobile: deepLink", Map.of("url", "example://path", "package", "com.mycompany.myapp"));
+    }
+
+    @DisplayName("Should execute the deepLink script for Android with waitForLaunch")
+    @Test
+    void testDeepLinkWithWaitForLaunch() {
+        androidSessionActions.deepLink(driver, "example://path", "com.mycompany.myapp", true);
+
+        verify(driver).executeScript("mobile: deepLink", Map.of("url", "example://path", "package", "com.mycompany.myapp", "waitForLaunch", true));
+    }
 }

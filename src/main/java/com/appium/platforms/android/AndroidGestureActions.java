@@ -96,4 +96,58 @@ public class AndroidGestureActions implements GestureActionsInterface {
     public void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
         driver.executeScript("mobile: scrollGesture", Map.of("direction", direction.name().toLowerCase(), "elementId", ((RemoteWebElement) webElement).getId(), "percent", percent));
     }
+
+    /**
+     * Performs a pinch open gesture on the screen.
+     *
+     * @param driver The AppiumDriver instance used to perform the gesture.
+     * @param scale  The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed  The speed at which to perform this gesture in pixels per second. The value must not be negative.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-pinchopengesture">UiAutomator2 - pinchOpenGesture</a>
+     */
+    @Override
+    public void pinchOpen(AppiumDriver driver, double scale, double speed) {
+        driver.executeScript("mobile: pinchOpenGesture", Map.of("percent", scale, "speed", speed));
+    }
+
+    /**
+     * Performs a pinch open gesture on a specific element.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param scale      The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed      The speed at which to perform this gesture in pixels per second. The value must not be negative.
+     * @param webElement The id of the element to be pinched. If the element id is missing then pinch bounding area must be provided. If both the element id and the pinch bounding area are provided then the area is effectively ignored.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-pinchopengesture">UiAutomator2 - pinchOpenGesture</a>
+     */
+    @Override
+    public void pinchOpen(AppiumDriver driver, double scale, double speed, WebElement webElement) {
+        driver.executeScript("mobile: pinchOpenGesture", Map.of("percent", scale, "speed", speed, "elementId", ((RemoteWebElement) webElement).getId()));
+    }
+
+    /**
+     * Performs a pinch close gesture on the screen.
+     *
+     * @param driver The AppiumDriver instance used to perform the gesture.
+     * @param scale  The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed  The speed at which to perform this gesture in pixels per second. The value must not be negative.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-pinchclosegesture">UiAutomator2 - pinchCloseGesture</a>
+     */
+    @Override
+    public void pinchClose(AppiumDriver driver, double scale, double speed) {
+        driver.executeScript("mobile: pinchCloseGesture", Map.of("percent", scale, "speed", speed));
+    }
+
+    /**
+     * Performs a pinch close gesture on a specific element.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param scale      The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed      The speed at which to perform this gesture in pixels per second. The value must not be negative.
+     * @param webElement The id of the element to be pinched. If the element id is missing then pinch bounding area must be provided. If both the element id and the pinch bounding area are provided then the area is effectively ignored.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-pinchclosegesture">UiAutomator2 - pinchCloseGesture</a>
+     */
+    @Override
+    public void pinchClose(AppiumDriver driver, double scale, double speed, WebElement webElement) {
+        driver.executeScript("mobile: pinchCloseGesture", Map.of("percent", scale, "speed", speed, "elementId", ((RemoteWebElement) webElement).getId()));
+    }
 }

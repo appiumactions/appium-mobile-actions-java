@@ -15,12 +15,16 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - lock
     - unlock
     - isLocked
+    - batteryInfo
+    - deviceInfo
 - **Keyboard actions**:
     - hideKeyboard
     - isKeyboardShown
 - **Gesture actions**:
     - scroll
     - swipe
+    - pinchOpen
+    - pinchClose
 - **Tap actions**:
     - tap
     - doubleTap
@@ -35,6 +39,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - backgroundApp
     - acceptAlert
     - dismissAlert
+    - deepLink
 
 ## Getting Started
 
@@ -44,9 +49,9 @@ Add the following dependency to your `pom.xml` file:
 
 ```xml
 <dependency>
-  <groupId>io.github.appiumactions</groupId>
-  <artifactId>appium-mobile-actions</artifactId>
-  <version>LATEST</version>
+    <groupId>io.github.appiumactions</groupId>
+    <artifactId>appium-mobile-actions</artifactId>
+    <version>LATEST</version>
 </dependency>
 ```
 

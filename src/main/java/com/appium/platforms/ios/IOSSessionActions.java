@@ -238,4 +238,31 @@ public class IOSSessionActions implements SessionActionsInterface {
     public void dismissAlert(AppiumDriver driver, String buttonLabel) {
         driver.executeScript("mobile: alert", Map.of("action", "dismiss", "buttonLabel", buttonLabel));
     }
+
+    /**
+     * Opens a deep link on the device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @param url    the deep link URL to be opened.
+     * @param appId  the bundle identifier of an application to open the given url with.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-deeplink">XCUITest - deepLink</a>
+     */
+    @Override
+    public void deepLink(AppiumDriver driver, String url, String appId) {
+        driver.executeScript("mobile: deepLink", Map.of("url", url, "bundleId", appId));
+    }
+
+    /**
+     * Opens a deep link on the device with an option to wait for the app to launch.
+     *
+     * @param driver        the AppiumDriver instance to interact with the device.
+     * @param url           the deep link URL to be opened.
+     * @param appId         the bundle identifier of an application to open the given url with.
+     * @param waitForLaunch a boolean value indicating whether to wait for the app to launch or not. <b>Currently not supported on the iOS platform.</b>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-deeplink">XCUITest - deepLink</a>
+     */
+    @Override
+    public void deepLink(AppiumDriver driver, String url, String appId, boolean waitForLaunch) {
+        driver.executeScript("mobile: deepLink", Map.of("url", url, "bundleId", appId));
+    }
 }

@@ -68,4 +68,32 @@ class GestureActionsInterfaceTest {
         gestureActionsInterface.scroll(driver, Direction.UP, 0.5, webElement);
         verify(gestureActionsInterface, times(1)).scroll(driver, Direction.UP, 0.5, webElement);
     }
+
+    @DisplayName("Should call pinchOpen method with scale and speed")
+    @Test
+    void testPinchOpenWithScaleAndSpeed() {
+        gestureActionsInterface.pinchOpen(driver, 0.5, 100);
+        verify(gestureActionsInterface, times(1)).pinchOpen(driver, 0.5, 100);
+    }
+
+    @DisplayName("Should call pinchOpen method with scale, speed and webElement")
+    @Test
+    void testPinchOpenWithScaleSpeedAndWebElement() {
+        gestureActionsInterface.pinchOpen(driver, 0.5, 100, webElement);
+        verify(gestureActionsInterface, times(1)).pinchOpen(driver, 0.5, 100, webElement);
+    }
+
+    @DisplayName("Should call pinchClose method with scale and speed")
+    @Test
+    void testPinchCloseWithScaleAndSpeed() {
+        gestureActionsInterface.pinchClose(driver, 0.5, 100);
+        verify(gestureActionsInterface, times(1)).pinchClose(driver, 0.5, 100);
+    }
+
+    @DisplayName("Should call pinchClose method with scale, speed and webElement")
+    @Test
+    void testPinchCloseWithScaleSpeedAndWebElement() {
+        gestureActionsInterface.pinchClose(driver, 0.5, 100, webElement);
+        verify(gestureActionsInterface, times(1)).pinchClose(driver, 0.5, 100, webElement);
+    }
 }

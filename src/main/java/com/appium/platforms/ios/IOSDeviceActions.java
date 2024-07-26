@@ -1,6 +1,7 @@
 package com.appium.platforms.ios;
 
 import com.appium.interfaces.DeviceActionsInterface;
+import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
 
 import java.util.Map;
@@ -100,5 +101,29 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     @Override
     public boolean isLocked(AppiumDriver driver) {
         return (boolean) driver.executeScript("mobile: isLocked");
+    }
+
+    /**
+     * Gets the battery information of the iOS device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The battery information of the device.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-batteryinfo">XCUITest - batteryInfo</a>
+     */
+    @Override
+    public BatteryInfoModel batteryInfo(AppiumDriver driver) {
+        return BatteryInfoModel.fromMap((Map) driver.executeScript("mobile: batteryInfo"));
+    }
+
+    /**
+     * Gets the device information of the iOS device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The device information of the device.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-deviceinfo">XCUITest - deviceInfo</a>
+     */
+    @Override
+    public Map<String, Object> deviceInfo(AppiumDriver driver) {
+        return (Map<String, Object>) driver.executeScript("mobile: deviceInfo");
     }
 }

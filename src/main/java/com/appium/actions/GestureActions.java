@@ -115,4 +115,54 @@ public class GestureActions extends BaseActions {
     public void scroll(Direction direction, double percent, WebElement webElement) {
         gestureActionsPlatform.scroll(driver, direction, percent, webElement);
     }
+
+    /**
+     * Performs a pinch open gesture on the screen.
+     *
+     * @param scale the scale of the pinch gesture.
+     * @param speed the speed at which to perform the pinch action.
+     * @see AndroidGestureActions#pinchOpen(AppiumDriver, double, double)
+     * @see IOSGestureActions#pinchOpen(AppiumDriver, double, double)
+     */
+    public void pinchOpen(double scale, int speed) {
+        gestureActionsPlatform.pinchOpen(driver, scale, speed);
+    }
+
+    /**
+     * Performs a pinch open gesture on the screen.
+     *
+     * @param scale      the scale of the pinch gesture.
+     * @param speed      the speed at which to perform the pinch action.
+     * @param webElement the WebElement on which to perform the pinch action.
+     * @see AndroidGestureActions#pinchOpen(AppiumDriver, double, double, WebElement)
+     * @see IOSGestureActions#pinchOpen(AppiumDriver, double, double, WebElement)
+     */
+    public void pinchOpen(double scale, int speed, WebElement webElement) {
+        gestureActionsPlatform.pinchOpen(driver, scale, speed, webElement);
+    }
+
+    /**
+     * Performs a pinch close gesture on the screen.
+     *
+     * @param scale the scale of the pinch gesture.
+     * @param speed the speed at which to perform the pinch action.
+     * @see AndroidGestureActions#pinchClose(AppiumDriver, double, double)
+     * @see IOSGestureActions#pinchClose(AppiumDriver, double, double)
+     */
+    public void pinchClose(double scale, int speed) {
+        gestureActionsPlatform.pinchClose(driver, scale, speed);
+    }
+
+    /**
+     * Performs a pinch close gesture on the screen.
+     *
+     * @param scale      the scale of the pinch gesture.
+     * @param speed      the speed at which to perform the pinch action.
+     * @param webElement the WebElement on which to perform the pinch action.
+     * @see AndroidGestureActions#pinchClose(AppiumDriver, double, double, WebElement)
+     * @see IOSGestureActions#pinchClose(AppiumDriver, double, double, WebElement)
+     */
+    public void pinchClose(double scale, int speed, WebElement webElement) {
+        gestureActionsPlatform.pinchClose(driver, scale, speed, webElement);
+    }
 }

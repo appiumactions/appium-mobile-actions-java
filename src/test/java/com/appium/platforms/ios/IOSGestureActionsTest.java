@@ -73,4 +73,32 @@ class IOSGestureActionsTest {
         iosGestureActions.scroll(driver, Direction.UP, 0.5, webElement);
         verify(driver, times(1)).executeScript("mobile: scroll", Map.of("direction", "up", "elementId", webElement.getId()));
     }
+
+    @DisplayName("Should call pinchOpen method with scale and speed")
+    @Test
+    void testPinchOpenWithScaleAndSpeed() {
+        iosGestureActions.pinchOpen(driver, 0.5, 2.2);
+        verify(driver, times(1)).executeScript("mobile: pinch", Map.of("scale", 1 + 0.5, "velocity", 2.2));
+    }
+
+    @DisplayName("Should call pinchOpen method with scale, speed and webElement")
+    @Test
+    void testPinchOpenWithScaleSpeedAndWebElement() {
+        iosGestureActions.pinchOpen(driver, 0.5, 2.2, webElement);
+        verify(driver, times(1)).executeScript("mobile: pinch", Map.of("scale", 1 + 0.5, "velocity", 2.2, "elementId", webElement.getId()));
+    }
+
+    @DisplayName("Should call pinchClose method with scale and speed")
+    @Test
+    void testPinchCloseWithScaleAndSpeed() {
+        iosGestureActions.pinchClose(driver, 0.5, 2.2);
+        verify(driver, times(1)).executeScript("mobile: pinch", Map.of("scale", 0.5, "velocity", 2.2));
+    }
+
+    @DisplayName("Should call pinchClose method with scale, speed and webElement")
+    @Test
+    void testPinchCloseWithScaleSpeedAndWebElement() {
+        iosGestureActions.pinchClose(driver, 0.5, 2.2, webElement);
+        verify(driver, times(1)).executeScript("mobile: pinch", Map.of("scale", 0.5, "velocity", 2.2, "elementId", webElement.getId()));
+    }
 }

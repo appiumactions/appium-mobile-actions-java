@@ -239,4 +239,31 @@ public class AndroidSessionActions implements SessionActionsInterface {
     public void dismissAlert(AppiumDriver driver, String buttonLabel) {
         driver.executeScript("mobile: dismissAlert", Map.of("buttonLabel", buttonLabel));
     }
+
+    /**
+     * Opens a deep link on the device.
+     *
+     * @param driver the AppiumDriver instance to interact with the device.
+     * @param url    the deep link to open.
+     * @param appId  the name of the package to start the URI with.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-deeplink">UiAutomator2 - deepLink</a>
+     */
+    @Override
+    public void deepLink(AppiumDriver driver, String url, String appId) {
+        driver.executeScript("mobile: deepLink", Map.of("url", url, "package", appId));
+    }
+
+    /**
+     * Opens a deep link on the device with an option to wait for the app to launch.
+     *
+     * @param driver        the AppiumDriver instance to interact with the device.
+     * @param url           the deep link to open.
+     * @param appId         the name of the package to start the URI with.
+     * @param waitForLaunch if false then ADB won't wait for the started activity to return the control. true by default.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-deeplink">UiAutomator2 - deepLink</a>
+     */
+    @Override
+    public void deepLink(AppiumDriver driver, String url, String appId, boolean waitForLaunch) {
+        driver.executeScript("mobile: deepLink", Map.of("url", url, "package", appId, "waitForLaunch", waitForLaunch));
+    }
 }
