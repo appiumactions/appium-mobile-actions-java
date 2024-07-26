@@ -97,4 +97,58 @@ public class IOSGestureActions implements GestureActionsInterface {
     public void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement) {
         driver.executeScript("mobile: scroll", Map.of("direction", direction.name().toLowerCase(), "elementId", ((RemoteWebElement) webElement).getId()));
     }
+
+    /**
+     * Performs a pinch open gesture on the screen.
+     *
+     * @param driver The AppiumDriver instance used to perform the gesture.
+     * @param scale  The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed  The velocity of the pinch in scale factor per second.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pinch">XCUITest - pinch</a>
+     */
+    @Override
+    public void pinchOpen(AppiumDriver driver, double scale, double speed) {
+        driver.executeScript("mobile: pinch", Map.of("scale", 1 + scale, "velocity", speed));
+    }
+
+    /**
+     * Performs a pinch open gesture on a specific element.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param scale      The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed      The velocity of the pinch in scale factor per second.
+     * @param webElement The WebElement on which the pinch gesture should be performed.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pinch">XCUITest - pinch</a>
+     */
+    @Override
+    public void pinchOpen(AppiumDriver driver, double scale, double speed, WebElement webElement) {
+        driver.executeScript("mobile: pinch", Map.of("scale", 1 + scale, "velocity", speed, "elementId", ((RemoteWebElement) webElement).getId()));
+    }
+
+    /**
+     * Performs a pinch close gesture on the screen.
+     *
+     * @param driver The AppiumDriver instance used to perform the gesture.
+     * @param scale  The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed  The velocity of the pinch in scale factor per second.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pinch">XCUITest - pinch</a>
+     */
+    @Override
+    public void pinchClose(AppiumDriver driver, double scale, double speed) {
+        driver.executeScript("mobile: pinch", Map.of("scale", scale, "velocity", speed));
+    }
+
+    /**
+     * Performs a pinch close gesture on a specific element.
+     *
+     * @param driver     The AppiumDriver instance used to perform the gesture.
+     * @param scale      The size of the pinch as a percentage of the pinch area size. Valid values must be float numbers in range 0..1, where 1.0 is 100%.
+     * @param speed      The velocity of the pinch in scale factor per second.
+     * @param webElement The WebElement on which the pinch gesture should be performed.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pinch">XCUITest - pinch</a>
+     */
+    @Override
+    public void pinchClose(AppiumDriver driver, double scale, double speed, WebElement webElement) {
+        driver.executeScript("mobile: pinch", Map.of("scale", scale, "velocity", speed, "elementId", ((RemoteWebElement) webElement).getId()));
+    }
 }

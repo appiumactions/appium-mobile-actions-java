@@ -73,4 +73,32 @@ class AndroidGestureActionsTest {
         androidGestureActions.scroll(driver, Direction.UP, 0.5, webElement);
         verify(driver, times(1)).executeScript("mobile: scrollGesture", Map.of("direction", "up", "percent", 0.5, "elementId", webElement.getId()));
     }
+
+    @DisplayName("Should call pinchOpen method with scale and speed")
+    @Test
+    void testPinchOpenWithScaleAndSpeed() {
+        androidGestureActions.pinchOpen(driver, 0.5, 2.2);
+        verify(driver, times(1)).executeScript("mobile: pinchOpenGesture", Map.of("percent", 0.5, "speed", 2.2));
+    }
+
+    @DisplayName("Should call pinchOpen method with scale, speed, and webElement")
+    @Test
+    void testPinchOpenWithScaleSpeedAndWebElement() {
+        androidGestureActions.pinchOpen(driver, 0.5, 2.2, webElement);
+        verify(driver, times(1)).executeScript("mobile: pinchOpenGesture", Map.of("percent", 0.5, "speed", 2.2, "elementId", webElement.getId()));
+    }
+
+    @DisplayName("Should call pinchClose method with scale and speed")
+    @Test
+    void testPinchCloseWithScaleAndSpeed() {
+        androidGestureActions.pinchClose(driver, 0.5, 2.2);
+        verify(driver, times(1)).executeScript("mobile: pinchCloseGesture", Map.of("percent", 0.5, "speed", 2.2));
+    }
+
+    @DisplayName("Should call pinchClose method with scale, speed, and webElement")
+    @Test
+    void testPinchCloseWithScaleSpeedAndWebElement() {
+        androidGestureActions.pinchClose(driver, 0.5, 2.2, webElement);
+        verify(driver, times(1)).executeScript("mobile: pinchCloseGesture", Map.of("percent", 0.5, "speed", 2.2, "elementId", webElement.getId()));
+    }
 }
