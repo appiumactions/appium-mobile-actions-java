@@ -15,4 +15,5 @@ public interface DeviceActionsInterface {
     boolean isLocked(AppiumDriver driver);
     BatteryInfoModel batteryInfo(AppiumDriver driver);
     Map<String, Object> deviceInfo(AppiumDriver driver);
+    void pushFile(AppiumDriver driver, String remotePath, String payload);
 }

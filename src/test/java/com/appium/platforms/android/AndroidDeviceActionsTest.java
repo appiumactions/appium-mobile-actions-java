@@ -106,6 +106,12 @@ class AndroidDeviceActionsTest {
         assertEquals("Android", deviceInfo.get("platformName"));
         assertEquals("11", deviceInfo.get("platformVersion"));
         verify(driver, times(1)).executeScript("mobile: deviceInfo");
+    }
 
+    @DisplayName("Should call pushFile method")
+    @Test
+    void testPushFile() {
+        androidDeviceActions.pushFile(driver, "/sdcard/foo.bar", "QXBwaXVt");
+        verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "/sdcard/foo.bar", "payload", "QXBwaXVt"));
     }
 }

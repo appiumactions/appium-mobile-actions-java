@@ -84,4 +84,11 @@ class DeviceActionsInterfaceTest {
         deviceActionsInterface.deviceInfo(driver);
         verify(deviceActionsInterface, times(1)).deviceInfo(driver);
     }
+
+    @DisplayName("Should call pushFile method")
+    @Test
+    void testPushFile() {
+        deviceActionsInterface.pushFile(driver, "remotePath", "payload");
+        verify(deviceActionsInterface, times(1)).pushFile(driver, "remotePath", "payload");
+    }
 }

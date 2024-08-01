@@ -143,4 +143,14 @@ public class DeviceActions extends BaseActions {
     public Map<String, Object> deviceInfo() {
         return deviceActionsPlatform.deviceInfo(driver);
     }
+
+    /**
+     * Pushes a file to the device.
+     *
+     * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @param payload    Base64-encoded content of the file to be pushed. Example: "QXBwaXVt".
+     */
+    public void pushFile(String remotePath, String payload) {
+        deviceActionsPlatform.pushFile(driver, remotePath, payload);
+    }
 }
