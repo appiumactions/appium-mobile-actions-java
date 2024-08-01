@@ -112,4 +112,12 @@ class IOSDeviceActionsTest {
         iosDeviceActions.pushFile(driver, "@com.mycompany.myapp:documents/myfile.txt", "QXBwaXVt");
         verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt", "payload", "QXBwaXVt"));
     }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        when(driver.executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"))).thenReturn("QXBwaXVt");
+        iosDeviceActions.pullFile(driver, "@com.mycompany.myapp:documents/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
+    }
 }

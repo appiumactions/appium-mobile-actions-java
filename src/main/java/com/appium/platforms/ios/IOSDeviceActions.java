@@ -139,4 +139,17 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     public void pushFile(AppiumDriver driver, String remotePath, String payload) {
         driver.executeScript("mobile: pushFile", Map.of("remotePath", remotePath, "payload", payload));
     }
+
+    /**
+     * Pulls a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The path to an existing remote file on the device. See the File Transfer guide for accepted formats. If the file with the given name does not exist an exception will be thrown.
+     * @return Base64-encoded string, which represents the content of the remote file.
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pullfile">XCUITest - pullFile</a>
+     */
+    @Override
+    public String pullFile(AppiumDriver driver, String remotePath) {
+        return (String) driver.executeScript("mobile: pullFile", Map.of("remotePath", remotePath));
+    }
 }

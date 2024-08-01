@@ -149,8 +149,22 @@ public class DeviceActions extends BaseActions {
      *
      * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
      * @param payload    Base64-encoded content of the file to be pushed. Example: "QXBwaXVt".
+     * @see com.appium.platforms.android.AndroidDeviceActions#pushFile(AppiumDriver, String, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pushFile(AppiumDriver, String, String)
      */
     public void pushFile(String remotePath, String payload) {
         deviceActionsPlatform.pushFile(driver, remotePath, payload);
+    }
+
+    /**
+     * Pulls a file from the device.
+     *
+     * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @return Base64-encoded string, which represents the content of the remote file.
+     * @see com.appium.platforms.android.AndroidDeviceActions#pullFile(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pullFile(AppiumDriver, String)
+     */
+    public String pullFile(String remotePath) {
+        return deviceActionsPlatform.pullFile(driver, remotePath);
     }
 }

@@ -114,4 +114,12 @@ class AndroidDeviceActionsTest {
         androidDeviceActions.pushFile(driver, "/sdcard/foo.bar", "QXBwaXVt");
         verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "/sdcard/foo.bar", "payload", "QXBwaXVt"));
     }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        when(driver.executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"))).thenReturn("QXBwaXVt");
+        androidDeviceActions.pullFile(driver, "/sdcard/foo.bar");
+        verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"));
+    }
 }

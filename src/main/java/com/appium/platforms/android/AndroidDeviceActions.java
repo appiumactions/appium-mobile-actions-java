@@ -139,4 +139,17 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
     public void pushFile(AppiumDriver driver, String remotePath, String payload) {
         driver.executeScript("mobile: pushFile", Map.of("remotePath", remotePath, "payload", payload));
     }
+
+    /**
+     * Pulls a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The full path to the remote file or a specially formatted path, which points to an item inside an app bundle, for example @my.app.id/my/path. It is mandatory for the app bundle to have debugging enabled in order to use the latter remotePath format. If the file with the given name does not exist then an exception will be thrown.
+     * @return Base64-encoded string, which represents the content of the remote file.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-pullfile">UiAutomator2 - pullFile</a>
+     */
+    @Override
+    public String pullFile(AppiumDriver driver, String remotePath) {
+        return (String) driver.executeScript("mobile: pullFile", Map.of("remotePath", remotePath));
+    }
 }

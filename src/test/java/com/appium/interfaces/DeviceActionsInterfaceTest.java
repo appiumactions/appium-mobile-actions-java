@@ -91,4 +91,12 @@ class DeviceActionsInterfaceTest {
         deviceActionsInterface.pushFile(driver, "remotePath", "payload");
         verify(deviceActionsInterface, times(1)).pushFile(driver, "remotePath", "payload");
     }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        deviceActionsInterface.pullFile(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).pullFile(driver, "remotePath");
+    }
+
 }

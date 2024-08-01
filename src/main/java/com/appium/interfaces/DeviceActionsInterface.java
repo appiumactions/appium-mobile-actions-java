@@ -16,4 +16,5 @@ public interface DeviceActionsInterface {
     BatteryInfoModel batteryInfo(AppiumDriver driver);
     Map<String, Object> deviceInfo(AppiumDriver driver);
     void pushFile(AppiumDriver driver, String remotePath, String payload);
+    String pullFile(AppiumDriver driver, String remotePath);
 }
