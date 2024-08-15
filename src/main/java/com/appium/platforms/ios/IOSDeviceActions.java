@@ -153,4 +153,17 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     public String pullFile(AppiumDriver driver, String remotePath) {
         return (String) driver.executeScript("mobile: pullFile", Map.of("remotePath", remotePath));
     }
+
+    /**
+     * Sets the connectivity of the device.
+     *
+     * @param driver       The Appium driver instance.
+     * @param wifi         Either to enable or disable Wi-Fi.
+     * @param data         Either to enable or disable mobile data.
+     * @param airplaneMode Either to enable or disable Airplane Mode.
+     */
+    @Override
+    public void setConnectivity(AppiumDriver driver, boolean wifi, boolean data, boolean airplaneMode) {
+        driver.executeScript("mobile: setConnectivity", Map.of("wifi", wifi, "data", data, "airplaneMode", airplaneMode));
+    }
 }

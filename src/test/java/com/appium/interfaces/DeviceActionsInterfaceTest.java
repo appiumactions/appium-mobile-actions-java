@@ -98,4 +98,11 @@ class DeviceActionsInterfaceTest {
         deviceActionsInterface.pullFile(driver, "remotePath");
         verify(deviceActionsInterface, times(1)).pullFile(driver, "remotePath");
     }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        deviceActionsInterface.setConnectivity(driver, true, true, true);
+        verify(deviceActionsInterface, times(1)).setConnectivity(driver, true, true, true);
+    }
 }

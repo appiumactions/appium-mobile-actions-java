@@ -122,4 +122,11 @@ class AndroidDeviceActionsTest {
         androidDeviceActions.pullFile(driver, "/sdcard/foo.bar");
         verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"));
     }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        androidDeviceActions.setConnectivity(driver, true, true, false);
+        verify(driver, times(1)).executeScript("mobile: setConnectivity", Map.of("wifi", true, "data", true, "airplaneMode", false));
+    }
 }

@@ -17,4 +17,5 @@ public interface DeviceActionsInterface {
     Map<String, Object> deviceInfo(AppiumDriver driver);
     void pushFile(AppiumDriver driver, String remotePath, String payload);
     String pullFile(AppiumDriver driver, String remotePath);
+    void setConnectivity(AppiumDriver driver, boolean wifi, boolean data, boolean airplaneMode);
 }

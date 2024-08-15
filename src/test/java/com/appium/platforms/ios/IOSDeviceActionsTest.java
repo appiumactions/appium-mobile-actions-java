@@ -120,4 +120,11 @@ class IOSDeviceActionsTest {
         iosDeviceActions.pullFile(driver, "@com.mycompany.myapp:documents/myfile.txt");
         verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
     }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        iosDeviceActions.setConnectivity(driver, false, false, true);
+        verify(driver, times(1)).executeScript("mobile: setConnectivity", Map.of("wifi", false, "data", false, "airplaneMode", true));
+    }
 }

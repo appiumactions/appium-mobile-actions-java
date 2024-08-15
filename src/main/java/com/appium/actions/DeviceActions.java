@@ -148,12 +148,12 @@ public class DeviceActions extends BaseActions {
      * Pushes a file to the device.
      *
      * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
-     * @param payload    Base64-encoded content of the file to be pushed. Example: "QXBwaXVt".
+     * @param filePath   The path to the file to be pushed. Examples: "src/test/resources/test.txt".
      * @see com.appium.platforms.android.AndroidDeviceActions#pushFile(AppiumDriver, String, String)
      * @see com.appium.platforms.ios.IOSDeviceActions#pushFile(AppiumDriver, String, String)
      */
-    public void pushFile(String remotePath, String payload) {
-        deviceActionsPlatform.pushFile(driver, remotePath, payload);
+    public void pushFile(String remotePath, String filePath) {
+        deviceActionsPlatform.pushFile(driver, remotePath, filePath);
     }
 
     /**
@@ -166,5 +166,18 @@ public class DeviceActions extends BaseActions {
      */
     public String pullFile(String remotePath) {
         return deviceActionsPlatform.pullFile(driver, remotePath);
+    }
+
+    /**
+     * Sets the connectivity of the device.
+     *
+     * @param wifi         Either to enable or disable Wi-Fi.
+     * @param data         Either to enable or disable mobile data.
+     * @param airplaneMode Either to enable or disable Airplane Mode.
+     * @see com.appium.platforms.android.AndroidDeviceActions#setConnectivity(AppiumDriver, boolean, boolean, boolean)
+     * @see com.appium.platforms.ios.IOSDeviceActions#setConnectivity(AppiumDriver, boolean, boolean, boolean)
+     */
+    public void setConnectivity(boolean wifi, boolean data, boolean airplaneMode) {
+        deviceActionsPlatform.setConnectivity(driver, wifi, data, airplaneMode);
     }
 }

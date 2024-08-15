@@ -19,6 +19,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - deviceInfo
     - pushFile
     - pullFile
+    - setConnectivity
 - **Keyboard actions**:
     - hideKeyboard
     - isKeyboardShown
@@ -42,6 +43,8 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - acceptAlert
     - dismissAlert
     - deepLink
+- **Commons**:
+    - Base64Common
 
 ## Getting Started
 
