@@ -1,5 +1,6 @@
 package com.appium.platforms.ios;
 
+import com.appium.commons.Base64Common;
 import com.appium.interfaces.DeviceActionsInterface;
 import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
@@ -132,12 +133,12 @@ public class IOSDeviceActions implements DeviceActionsInterface {
      *
      * @param driver     The Appium driver instance.
      * @param remotePath The path on the device to where the payload should be written. The value format is similar to the one used in pullFile extension. If the file with the same name already exists then it will be silently overridden.
-     * @param payload    Base64-encoded content of the file to be pushed.
+     * @param filePath   The path to the local file to be pushed.
      * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-pushfile">XCUITest - pushFile</a>
      */
     @Override
-    public void pushFile(AppiumDriver driver, String remotePath, String payload) {
-        driver.executeScript("mobile: pushFile", Map.of("remotePath", remotePath, "payload", payload));
+    public void pushFile(AppiumDriver driver, String remotePath, String filePath) {
+        driver.executeScript("mobile: pushFile", Map.of("remotePath", remotePath, "payload", Base64Common.encode(filePath)));
     }
 
     /**

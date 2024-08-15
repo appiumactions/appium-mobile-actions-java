@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Device actions
     - pushFile
     - pullFile
+  - Utilities
+    - Base64Common
 
 ## [1.1.0] - 2024-07-26
 

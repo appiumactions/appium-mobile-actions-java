@@ -98,5 +98,4 @@ class DeviceActionsInterfaceTest {
         deviceActionsInterface.pullFile(driver, "remotePath");
         verify(deviceActionsInterface, times(1)).pullFile(driver, "remotePath");
     }
-
 }

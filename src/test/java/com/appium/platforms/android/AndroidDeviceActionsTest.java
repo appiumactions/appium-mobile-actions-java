@@ -111,8 +111,8 @@ class AndroidDeviceActionsTest {
     @DisplayName("Should call pushFile method")
     @Test
     void testPushFile() {
-        androidDeviceActions.pushFile(driver, "/sdcard/foo.bar", "QXBwaXVt");
-        verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "/sdcard/foo.bar", "payload", "QXBwaXVt"));
+        androidDeviceActions.pushFile(driver, "/sdcard/foo.bar", "src/test/resources/test.txt");
+        verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "/sdcard/foo.bar", "payload", "anVzdCBhIHRlc3Qh"));
     }
 
     @DisplayName("Should call pullFile method")
