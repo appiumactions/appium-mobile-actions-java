@@ -8,6 +8,7 @@ import com.google.common.annotations.VisibleForTesting;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -179,5 +180,40 @@ public class DeviceActions extends BaseActions {
      */
     public void setConnectivity(boolean wifi, boolean data, boolean airplaneMode) {
         deviceActionsPlatform.setConnectivity(driver, wifi, data, airplaneMode);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver)
+     */
+    public Map<String, Object> getConnectivity() {
+        return deviceActionsPlatform.getConnectivity(driver);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param service The service for which to get the connectivity information. Supported service names are: wifi, data, airplaneMode.
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver, String)
+     */
+    public Map<String, Object> getConnectivity(String service) {
+        return deviceActionsPlatform.getConnectivity(driver, service);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param services The services for which to get the connectivity information. Supported service names are: wifi, data, airplaneMode.
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver, List)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver, List)
+     */
+    public Map<String, Object> getConnectivity(List<String> services) {
+        return deviceActionsPlatform.getConnectivity(driver, services);
     }
 }

@@ -5,6 +5,7 @@ import com.appium.interfaces.DeviceActionsInterface;
 import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -165,5 +166,40 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     @Override
     public void setConnectivity(AppiumDriver driver, boolean wifi, boolean data, boolean airplaneMode) {
         driver.executeScript("mobile: setConnectivity", Map.of("wifi", wifi, "data", data, "airplaneMode", airplaneMode));
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The connectivity information of the device.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity");
+    }
+
+    /**
+     * Gets the connectivity of the device for a specific service.
+     *
+     * @param driver  The Appium driver instance.
+     * @param service The service for which to get the connectivity information.
+     * @return The connectivity information of the device for the specified service.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver, String service) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity", Map.of("services", service));
+    }
+
+    /**
+     * Gets the connectivity of the device for multiple services.
+     *
+     * @param driver   The Appium driver instance.
+     * @param services The services for which to get the connectivity information.
+     * @return The connectivity information of the device for the specified services.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver, List<String> services) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity", Map.of("services", services));
     }
 }

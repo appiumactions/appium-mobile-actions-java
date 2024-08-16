@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
+
 import static org.mockito.Mockito.*;
 
 class DeviceActionsInterfaceTest {
@@ -104,5 +106,26 @@ class DeviceActionsInterfaceTest {
     void testSetConnectivity() {
         deviceActionsInterface.setConnectivity(driver, true, true, true);
         verify(deviceActionsInterface, times(1)).setConnectivity(driver, true, true, true);
+    }
+
+    @DisplayName("Should call getConnectivity method")
+    @Test
+    void testGetConnectivity() {
+        deviceActionsInterface.getConnectivity(driver);
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver);
+    }
+
+    @DisplayName("Should call getConnectivity method with service")
+    @Test
+    void testGetConnectivityWithService() {
+        deviceActionsInterface.getConnectivity(driver, "wifi");
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver, "wifi");
+    }
+
+    @DisplayName("Should call getConnectivity method with services")
+    @Test
+    void testGetConnectivityWithServices() {
+        deviceActionsInterface.getConnectivity(driver, List.of("wifi", "data"));
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver, List.of("wifi", "data"));
     }
 }

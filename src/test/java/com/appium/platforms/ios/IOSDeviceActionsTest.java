@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -126,5 +127,26 @@ class IOSDeviceActionsTest {
     void testSetConnectivity() {
         iosDeviceActions.setConnectivity(driver, false, false, true);
         verify(driver, times(1)).executeScript("mobile: setConnectivity", Map.of("wifi", false, "data", false, "airplaneMode", true));
+    }
+
+    @DisplayName("Should call getConnectivity method")
+    @Test
+    void testGetConnectivity() {
+        iosDeviceActions.getConnectivity(driver);
+        verify(driver, times(1)).executeScript("mobile: getConnectivity");
+    }
+
+    @DisplayName("Should call getConnectivity method with service")
+    @Test
+    void testGetConnectivityWithService() {
+        iosDeviceActions.getConnectivity(driver, "airplaneMode");
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", "airplaneMode"));
+    }
+
+    @DisplayName("Should call getConnectivity method with services")
+    @Test
+    void testGetConnectivityWithServices() {
+        iosDeviceActions.getConnectivity(driver, List.of("wifi", "data"));
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", List.of("wifi", "data")));
     }
 }
