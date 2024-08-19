@@ -20,6 +20,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - pushFile
     - pullFile
     - pullFolder
+    - deleteFile
     - setConnectivity
     - getConnectivity
 - **Keyboard actions**:

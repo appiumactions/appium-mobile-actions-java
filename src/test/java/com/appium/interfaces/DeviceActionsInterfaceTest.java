@@ -108,6 +108,13 @@ class DeviceActionsInterfaceTest {
         verify(deviceActionsInterface, times(1)).pullFolder(driver, "remotePath");
     }
 
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        deviceActionsInterface.deleteFile(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).deleteFile(driver, "remotePath");
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

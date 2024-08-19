@@ -132,6 +132,13 @@ class AndroidDeviceActionsTest {
         verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "/sdcard/foo"));
     }
 
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        androidDeviceActions.deleteFile(driver, "/sdcard/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: deleteFile", Map.of("remotePath", "/sdcard/myfile.txt"));
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

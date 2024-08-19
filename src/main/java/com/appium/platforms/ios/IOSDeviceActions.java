@@ -168,6 +168,17 @@ public class IOSDeviceActions implements DeviceActionsInterface {
     }
 
     /**
+     * Deletes a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The path to the remote file to be deleted. Example: @com.mycompany.myapp:documents/myfile.txt
+     */
+    @Override
+    public void deleteFile(AppiumDriver driver, String remotePath) {
+        driver.executeScript("mobile: deleteFile", Map.of("remotePath", remotePath));
+    }
+
+    /**
      * Sets the connectivity of the device.
      *
      * @param driver       The Appium driver instance.

@@ -168,6 +168,17 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
     }
 
     /**
+     * Deletes a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The full path to the remote file or a file inside an application bundle. Example: /sdcard/myfile.txt or @my.app.id/path/in/bundle
+     */
+    @Override
+    public void deleteFile(AppiumDriver driver, String remotePath) {
+        driver.executeScript("mobile: deleteFile", Map.of("remotePath", remotePath));
+    }
+
+    /**
      * Sets the connectivity of the device.
      *
      * @param driver       The Appium driver instance.

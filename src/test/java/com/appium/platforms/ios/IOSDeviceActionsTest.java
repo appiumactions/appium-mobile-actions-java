@@ -130,6 +130,13 @@ class IOSDeviceActionsTest {
         verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "@com.mycompany.myapp:documents"));
     }
 
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        iosDeviceActions.deleteFile(driver, "@com.mycompany.myapp:documents/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: deleteFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

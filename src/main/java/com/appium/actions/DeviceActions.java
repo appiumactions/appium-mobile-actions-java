@@ -180,7 +180,18 @@ public class DeviceActions extends BaseActions {
     public String pullFolder(String remotePath) {
         return deviceActionsPlatform.pullFolder(driver, remotePath);
     }
-    
+
+    /**
+     * Deletes a file from the device.
+     *
+     * @param remotePath The path on the device where the file should be deleted. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @see com.appium.platforms.android.AndroidDeviceActions#deleteFile(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#deleteFile(AppiumDriver, String)
+     */
+    public void deleteFile(String remotePath) {
+        deviceActionsPlatform.deleteFile(driver, remotePath);
+    }
+
     /**
      * Sets the connectivity of the device.
      *
