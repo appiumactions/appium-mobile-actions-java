@@ -122,6 +122,14 @@ class IOSDeviceActionsTest {
         verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
     }
 
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        when(driver.executeScript("mobile: pullFolder", Map.of("remotePath", "@com.mycompany.myapp:documents"))).thenReturn("QXBwaXVt");
+        iosDeviceActions.pullFolder(driver, "@com.mycompany.myapp:documents");
+        verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "@com.mycompany.myapp:documents"));
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

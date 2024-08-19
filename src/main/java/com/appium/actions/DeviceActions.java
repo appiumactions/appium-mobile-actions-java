@@ -170,6 +170,18 @@ public class DeviceActions extends BaseActions {
     }
 
     /**
+     * Pulls a folder from the device.
+     *
+     * @param remotePath The path on the device where the folder should be pushed. Examples: Android -> "/sdcard/myfolder", iOS -> "@com.mycompany.myapp:documents/myfolder".
+     * @return Base64-encoded string, which represents the zipped content of the remote folder.
+     * @see com.appium.platforms.android.AndroidDeviceActions#pullFolder(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pullFolder(AppiumDriver, String)
+     */
+    public String pullFolder(String remotePath) {
+        return deviceActionsPlatform.pullFolder(driver, remotePath);
+    }
+    
+    /**
      * Sets the connectivity of the device.
      *
      * @param wifi         Either to enable or disable Wi-Fi.

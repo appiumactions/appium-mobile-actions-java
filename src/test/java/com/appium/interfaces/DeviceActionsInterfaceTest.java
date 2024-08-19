@@ -101,6 +101,13 @@ class DeviceActionsInterfaceTest {
         verify(deviceActionsInterface, times(1)).pullFile(driver, "remotePath");
     }
 
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        deviceActionsInterface.pullFolder(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).pullFolder(driver, "remotePath");
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

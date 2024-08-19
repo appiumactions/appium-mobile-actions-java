@@ -19,6 +19,7 @@ Until version 7.6.0 of java_client (Appium) it was common to use the TouchAction
     - deviceInfo
     - pushFile
     - pullFile
+    - pullFolder
     - setConnectivity
     - getConnectivity
 - **Keyboard actions**:

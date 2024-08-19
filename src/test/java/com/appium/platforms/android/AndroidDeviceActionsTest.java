@@ -124,6 +124,14 @@ class AndroidDeviceActionsTest {
         verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"));
     }
 
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        when(driver.executeScript("mobile: pullFolder", Map.of("remotePath", "/sdcard/foo"))).thenReturn("QXBwaXVt");
+        androidDeviceActions.pullFolder(driver, "/sdcard/foo");
+        verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "/sdcard/foo"));
+    }
+
     @DisplayName("Should call setConnectivity method")
     @Test
     void testSetConnectivity() {

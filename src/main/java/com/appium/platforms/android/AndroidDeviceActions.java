@@ -156,6 +156,18 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
     }
 
     /**
+     * Pulls a folder from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath Same as for pullFile extension, but should be pointing to a remote folder. Example: /sdcard/yolo/
+     * @return Base64-encoded string, which represents the zipped content of the remote folder.
+     */
+    @Override
+    public String pullFolder(AppiumDriver driver, String remotePath) {
+        return (String) driver.executeScript("mobile: pullFolder", Map.of("remotePath", remotePath));
+    }
+
+    /**
      * Sets the connectivity of the device.
      *
      * @param driver       The Appium driver instance.
