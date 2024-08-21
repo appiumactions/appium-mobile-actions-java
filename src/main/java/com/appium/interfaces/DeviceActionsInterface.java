@@ -3,6 +3,7 @@ package com.appium.interfaces;
 import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
 
+import java.util.List;
 import java.util.Map;
 
 public interface DeviceActionsInterface {
@@ -15,4 +16,12 @@ public interface DeviceActionsInterface {
     boolean isLocked(AppiumDriver driver);
     BatteryInfoModel batteryInfo(AppiumDriver driver);
     Map<String, Object> deviceInfo(AppiumDriver driver);
+    void pushFile(AppiumDriver driver, String remotePath, String payload);
+    String pullFile(AppiumDriver driver, String remotePath);
+    String pullFolder(AppiumDriver driver, String remotePath);
+    void deleteFile(AppiumDriver driver, String remotePath);
+    void setConnectivity(AppiumDriver driver, boolean wifi, boolean data, boolean airplaneMode);
+    Map<String, Object> getConnectivity(AppiumDriver driver);
+    Map<String, Object> getConnectivity(AppiumDriver driver, String service);
+    Map<String, Object> getConnectivity(AppiumDriver driver, List<String> services);
 }

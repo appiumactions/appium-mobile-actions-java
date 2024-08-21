@@ -8,6 +8,7 @@ import com.google.common.annotations.VisibleForTesting;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -142,5 +143,100 @@ public class DeviceActions extends BaseActions {
      */
     public Map<String, Object> deviceInfo() {
         return deviceActionsPlatform.deviceInfo(driver);
+    }
+
+    /**
+     * Pushes a file to the device.
+     *
+     * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @param filePath   The path to the file to be pushed. Examples: "src/test/resources/test.txt".
+     * @see com.appium.platforms.android.AndroidDeviceActions#pushFile(AppiumDriver, String, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pushFile(AppiumDriver, String, String)
+     */
+    public void pushFile(String remotePath, String filePath) {
+        deviceActionsPlatform.pushFile(driver, remotePath, filePath);
+    }
+
+    /**
+     * Pulls a file from the device.
+     *
+     * @param remotePath The path on the device where the file should be pushed. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @return Base64-encoded string, which represents the content of the remote file.
+     * @see com.appium.platforms.android.AndroidDeviceActions#pullFile(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pullFile(AppiumDriver, String)
+     */
+    public String pullFile(String remotePath) {
+        return deviceActionsPlatform.pullFile(driver, remotePath);
+    }
+
+    /**
+     * Pulls a folder from the device.
+     *
+     * @param remotePath The path on the device where the folder should be pushed. Examples: Android -> "/sdcard/myfolder", iOS -> "@com.mycompany.myapp:documents/myfolder".
+     * @return Base64-encoded string, which represents the zipped content of the remote folder.
+     * @see com.appium.platforms.android.AndroidDeviceActions#pullFolder(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#pullFolder(AppiumDriver, String)
+     */
+    public String pullFolder(String remotePath) {
+        return deviceActionsPlatform.pullFolder(driver, remotePath);
+    }
+
+    /**
+     * Deletes a file from the device.
+     *
+     * @param remotePath The path on the device where the file should be deleted. Examples: Android -> "/sdcard/myfile.txt", iOS -> "@com.mycompany.myapp:documents/myfile.txt".
+     * @see com.appium.platforms.android.AndroidDeviceActions#deleteFile(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#deleteFile(AppiumDriver, String)
+     */
+    public void deleteFile(String remotePath) {
+        deviceActionsPlatform.deleteFile(driver, remotePath);
+    }
+
+    /**
+     * Sets the connectivity of the device.
+     *
+     * @param wifi         Either to enable or disable Wi-Fi.
+     * @param data         Either to enable or disable mobile data.
+     * @param airplaneMode Either to enable or disable Airplane Mode.
+     * @see com.appium.platforms.android.AndroidDeviceActions#setConnectivity(AppiumDriver, boolean, boolean, boolean)
+     * @see com.appium.platforms.ios.IOSDeviceActions#setConnectivity(AppiumDriver, boolean, boolean, boolean)
+     */
+    public void setConnectivity(boolean wifi, boolean data, boolean airplaneMode) {
+        deviceActionsPlatform.setConnectivity(driver, wifi, data, airplaneMode);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver)
+     */
+    public Map<String, Object> getConnectivity() {
+        return deviceActionsPlatform.getConnectivity(driver);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param service The service for which to get the connectivity information. Supported service names are: wifi, data, airplaneMode.
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver, String)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver, String)
+     */
+    public Map<String, Object> getConnectivity(String service) {
+        return deviceActionsPlatform.getConnectivity(driver, service);
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param services The services for which to get the connectivity information. Supported service names are: wifi, data, airplaneMode.
+     * @return The connectivity of the device.
+     * @see com.appium.platforms.android.AndroidDeviceActions#getConnectivity(AppiumDriver, List)
+     * @see com.appium.platforms.ios.IOSDeviceActions#getConnectivity(AppiumDriver, List)
+     */
+    public Map<String, Object> getConnectivity(List<String> services) {
+        return deviceActionsPlatform.getConnectivity(driver, services);
     }
 }

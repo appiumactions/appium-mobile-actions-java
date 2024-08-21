@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -106,6 +107,63 @@ class AndroidDeviceActionsTest {
         assertEquals("Android", deviceInfo.get("platformName"));
         assertEquals("11", deviceInfo.get("platformVersion"));
         verify(driver, times(1)).executeScript("mobile: deviceInfo");
+    }
 
+    @DisplayName("Should call pushFile method")
+    @Test
+    void testPushFile() {
+        androidDeviceActions.pushFile(driver, "/sdcard/foo.bar", "src/test/resources/test.txt");
+        verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "/sdcard/foo.bar", "payload", "anVzdCBhIHRlc3Qh"));
+    }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        when(driver.executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"))).thenReturn("QXBwaXVt");
+        androidDeviceActions.pullFile(driver, "/sdcard/foo.bar");
+        verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "/sdcard/foo.bar"));
+    }
+
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        when(driver.executeScript("mobile: pullFolder", Map.of("remotePath", "/sdcard/foo"))).thenReturn("QXBwaXVt");
+        androidDeviceActions.pullFolder(driver, "/sdcard/foo");
+        verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "/sdcard/foo"));
+    }
+
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        androidDeviceActions.deleteFile(driver, "/sdcard/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: deleteFile", Map.of("remotePath", "/sdcard/myfile.txt"));
+    }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        androidDeviceActions.setConnectivity(driver, true, true, false);
+        verify(driver, times(1)).executeScript("mobile: setConnectivity", Map.of("wifi", true, "data", true, "airplaneMode", false));
+    }
+
+    @DisplayName("Should call getConnectivity method")
+    @Test
+    void testGetConnectivity() {
+        androidDeviceActions.getConnectivity(driver);
+        verify(driver, times(1)).executeScript("mobile: getConnectivity");
+    }
+
+    @DisplayName("Should call getConnectivity method with service")
+    @Test
+    void testGetConnectivityWithService() {
+        androidDeviceActions.getConnectivity(driver, "wifi");
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", "wifi"));
+    }
+
+    @DisplayName("Should call getConnectivity method with services")
+    @Test
+    void testGetConnectivityWithServices() {
+        androidDeviceActions.getConnectivity(driver, List.of("data", "airplaneMode"));
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", List.of("data", "airplaneMode")));
     }
 }

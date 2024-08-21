@@ -1,9 +1,11 @@
 package com.appium.platforms.android;
 
+import com.appium.commons.Base64Common;
 import com.appium.interfaces.DeviceActionsInterface;
 import com.appium.models.BatteryInfoModel;
 import io.appium.java_client.AppiumDriver;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -125,5 +127,102 @@ public class AndroidDeviceActions implements DeviceActionsInterface {
     @Override
     public Map<String, Object> deviceInfo(AppiumDriver driver) {
         return (Map<String, Object>) driver.executeScript("mobile: deviceInfo");
+    }
+
+    /**
+     * Pushes a local file to the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The path on the device to where the payload should be written. The value format is similar to the one used in pullFile extension. If the file with the same name already exists then it will be silently overridden.
+     * @param filePath   The path to the local file to be pushed.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-pushfile">UiAutomator2 - pushFile</a>
+     */
+    @Override
+    public void pushFile(AppiumDriver driver, String remotePath, String filePath) {
+        driver.executeScript("mobile: pushFile", Map.of("remotePath", remotePath, "payload", Base64Common.encode(filePath)));
+    }
+
+    /**
+     * Pulls a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The full path to the remote file or a specially formatted path, which points to an item inside an app bundle, for example @my.app.id/my/path. It is mandatory for the app bundle to have debugging enabled in order to use the latter remotePath format. If the file with the given name does not exist then an exception will be thrown.
+     * @return Base64-encoded string, which represents the content of the remote file.
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/README.md#mobile-pullfile">UiAutomator2 - pullFile</a>
+     */
+    @Override
+    public String pullFile(AppiumDriver driver, String remotePath) {
+        return (String) driver.executeScript("mobile: pullFile", Map.of("remotePath", remotePath));
+    }
+
+    /**
+     * Pulls a folder from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath Same as for pullFile extension, but should be pointing to a remote folder. Example: /sdcard/yolo/
+     * @return Base64-encoded string, which represents the zipped content of the remote folder.
+     */
+    @Override
+    public String pullFolder(AppiumDriver driver, String remotePath) {
+        return (String) driver.executeScript("mobile: pullFolder", Map.of("remotePath", remotePath));
+    }
+
+    /**
+     * Deletes a file from the device.
+     *
+     * @param driver     The Appium driver instance.
+     * @param remotePath The full path to the remote file or a file inside an application bundle. Example: /sdcard/myfile.txt or @my.app.id/path/in/bundle
+     */
+    @Override
+    public void deleteFile(AppiumDriver driver, String remotePath) {
+        driver.executeScript("mobile: deleteFile", Map.of("remotePath", remotePath));
+    }
+
+    /**
+     * Sets the connectivity of the device.
+     *
+     * @param driver       The Appium driver instance.
+     * @param wifi         Either to enable or disable Wi-Fi.
+     * @param data         Either to enable or disable mobile data.
+     * @param airplaneMode Either to enable or disable Airplane Mode.
+     */
+    @Override
+    public void setConnectivity(AppiumDriver driver, boolean wifi, boolean data, boolean airplaneMode) {
+        driver.executeScript("mobile: setConnectivity", Map.of("wifi", wifi, "data", data, "airplaneMode", airplaneMode));
+    }
+
+    /**
+     * Gets the connectivity of the device.
+     *
+     * @param driver The Appium driver instance.
+     * @return The connectivity information of the device.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity");
+    }
+
+    /**
+     * Gets the connectivity of the device for a specific service.
+     *
+     * @param driver  The Appium driver instance.
+     * @param service The service for which to get the connectivity information.
+     * @return The connectivity information of the device for the specified service.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver, String service) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity", Map.of("services", service));
+    }
+
+    /**
+     * Gets the connectivity of the device for multiple services.
+     *
+     * @param driver   The Appium driver instance.
+     * @param services The services for which to get the connectivity information.
+     * @return The connectivity information of the device for the specified services.
+     */
+    @Override
+    public Map<String, Object> getConnectivity(AppiumDriver driver, List<String> services) {
+        return (Map<String, Object>) driver.executeScript("mobile: getConnectivity", Map.of("services", services));
     }
 }

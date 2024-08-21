@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
+
 import static org.mockito.Mockito.*;
 
 class DeviceActionsInterfaceTest {
@@ -83,5 +85,61 @@ class DeviceActionsInterfaceTest {
     void testDeviceInfo() {
         deviceActionsInterface.deviceInfo(driver);
         verify(deviceActionsInterface, times(1)).deviceInfo(driver);
+    }
+
+    @DisplayName("Should call pushFile method")
+    @Test
+    void testPushFile() {
+        deviceActionsInterface.pushFile(driver, "remotePath", "payload");
+        verify(deviceActionsInterface, times(1)).pushFile(driver, "remotePath", "payload");
+    }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        deviceActionsInterface.pullFile(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).pullFile(driver, "remotePath");
+    }
+
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        deviceActionsInterface.pullFolder(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).pullFolder(driver, "remotePath");
+    }
+
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        deviceActionsInterface.deleteFile(driver, "remotePath");
+        verify(deviceActionsInterface, times(1)).deleteFile(driver, "remotePath");
+    }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        deviceActionsInterface.setConnectivity(driver, true, true, true);
+        verify(deviceActionsInterface, times(1)).setConnectivity(driver, true, true, true);
+    }
+
+    @DisplayName("Should call getConnectivity method")
+    @Test
+    void testGetConnectivity() {
+        deviceActionsInterface.getConnectivity(driver);
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver);
+    }
+
+    @DisplayName("Should call getConnectivity method with service")
+    @Test
+    void testGetConnectivityWithService() {
+        deviceActionsInterface.getConnectivity(driver, "wifi");
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver, "wifi");
+    }
+
+    @DisplayName("Should call getConnectivity method with services")
+    @Test
+    void testGetConnectivityWithServices() {
+        deviceActionsInterface.getConnectivity(driver, List.of("wifi", "data"));
+        verify(deviceActionsInterface, times(1)).getConnectivity(driver, List.of("wifi", "data"));
     }
 }

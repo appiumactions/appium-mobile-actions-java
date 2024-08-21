@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -104,5 +105,63 @@ class IOSDeviceActionsTest {
         assertEquals("iPhone 12", deviceInfo.get("deviceName"));
         assertEquals("iOS", deviceInfo.get("platformName"));
         verify(driver, times(1)).executeScript("mobile: deviceInfo");
+    }
+
+    @DisplayName("Should call pushFile method")
+    @Test
+    void testPushFile() {
+        iosDeviceActions.pushFile(driver, "@com.mycompany.myapp:documents/myfile.txt", "src/test/resources/test.txt");
+        verify(driver, times(1)).executeScript("mobile: pushFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt", "payload", "anVzdCBhIHRlc3Qh"));
+    }
+
+    @DisplayName("Should call pullFile method")
+    @Test
+    void testPullFile() {
+        when(driver.executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"))).thenReturn("QXBwaXVt");
+        iosDeviceActions.pullFile(driver, "@com.mycompany.myapp:documents/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: pullFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
+    }
+
+    @DisplayName("Should call pullFolder method")
+    @Test
+    void testPullFolder() {
+        when(driver.executeScript("mobile: pullFolder", Map.of("remotePath", "@com.mycompany.myapp:documents"))).thenReturn("QXBwaXVt");
+        iosDeviceActions.pullFolder(driver, "@com.mycompany.myapp:documents");
+        verify(driver, times(1)).executeScript("mobile: pullFolder", Map.of("remotePath", "@com.mycompany.myapp:documents"));
+    }
+
+    @DisplayName("Should call deleteFile method")
+    @Test
+    void testDeleteFile() {
+        iosDeviceActions.deleteFile(driver, "@com.mycompany.myapp:documents/myfile.txt");
+        verify(driver, times(1)).executeScript("mobile: deleteFile", Map.of("remotePath", "@com.mycompany.myapp:documents/myfile.txt"));
+    }
+
+    @DisplayName("Should call setConnectivity method")
+    @Test
+    void testSetConnectivity() {
+        iosDeviceActions.setConnectivity(driver, false, false, true);
+        verify(driver, times(1)).executeScript("mobile: setConnectivity", Map.of("wifi", false, "data", false, "airplaneMode", true));
+    }
+
+    @DisplayName("Should call getConnectivity method")
+    @Test
+    void testGetConnectivity() {
+        iosDeviceActions.getConnectivity(driver);
+        verify(driver, times(1)).executeScript("mobile: getConnectivity");
+    }
+
+    @DisplayName("Should call getConnectivity method with service")
+    @Test
+    void testGetConnectivityWithService() {
+        iosDeviceActions.getConnectivity(driver, "airplaneMode");
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", "airplaneMode"));
+    }
+
+    @DisplayName("Should call getConnectivity method with services")
+    @Test
+    void testGetConnectivityWithServices() {
+        iosDeviceActions.getConnectivity(driver, List.of("wifi", "data"));
+        verify(driver, times(1)).executeScript("mobile: getConnectivity", Map.of("services", List.of("wifi", "data")));
     }
 }
