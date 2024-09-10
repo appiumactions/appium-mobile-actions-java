@@ -98,6 +98,23 @@ public class AndroidGestureActions implements GestureActionsInterface {
     }
 
     /**
+     * Performs a scroll gesture in the specified direction covering a certain percentage of the screen.
+     *
+     * @param driver    The AppiumDriver instance used to perform the gesture.
+     * @param direction The direction of the scroll (UP, DOWN, LEFT, RIGHT).
+     * @param percent   The percentage of the screen the scroll should cover.
+     * @param left      The left coordinate of the scroll bounding area
+     * @param top       The top coordinate of the scroll bounding area
+     * @param width     The width of the scroll bounding area
+     * @param height    The height of the scroll bounding area
+     * @see <a href="https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md#mobile-scrollgesture">UiAutomator2 - scrollGesture</a>
+     */
+    @Override
+    public void scroll(AppiumDriver driver, Direction direction, double percent, int left, int top, int width, int height) {
+        driver.executeScript("mobile: scrollGesture", Map.of("direction", direction.name().toLowerCase(), "percent", percent, "left", left, "top", top, "width", width, "height", height));
+    }
+
+    /**
      * Performs a pinch open gesture on the screen.
      *
      * @param driver The AppiumDriver instance used to perform the gesture.

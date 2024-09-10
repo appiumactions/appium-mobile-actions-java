@@ -11,6 +11,7 @@ public interface GestureActionsInterface {
     void swipe(AppiumDriver driver, Direction direction, double percent, int speed, WebElement webElement);
     void scroll(AppiumDriver driver, Direction direction, double percent);
     void scroll(AppiumDriver driver, Direction direction, double percent, WebElement webElement);
+    void scroll(AppiumDriver driver, Direction direction, double percent, int left, int top, int width, int height);
     void pinchOpen(AppiumDriver driver, double scale, double speed);
     void pinchOpen(AppiumDriver driver, double scale, double speed, WebElement webElement);
     void pinchClose(AppiumDriver driver, double scale, double speed);

@@ -117,6 +117,22 @@ public class GestureActions extends BaseActions {
     }
 
     /**
+     * Scrolls the screen in the specified direction by the specified percentage.
+     *
+     * @param direction the direction in which to scroll.
+     * @param percent   the percentage of the screen width/height by which to scroll. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @param left      the left coordinate of the scroll bounding area. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @param top       the top coordinate of the scroll bounding area. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @param width     the width of the scroll bounding area. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @param height    the height of the scroll bounding area. Parameter supported <b>only in UiAutomator2 - Android</b>.
+     * @see AndroidGestureActions#scroll(AppiumDriver, Direction, double, int, int, int, int)
+     * @see IOSGestureActions#scroll(AppiumDriver, Direction, double, int, int, int, int)
+     */
+    public void scroll(Direction direction, double percent, int left, int top, int width, int height) {
+        gestureActionsPlatform.scroll(driver, direction, percent, left, top, width, height);
+    }
+
+    /**
      * Performs a pinch open gesture on the screen.
      *
      * @param scale the scale of the pinch gesture.

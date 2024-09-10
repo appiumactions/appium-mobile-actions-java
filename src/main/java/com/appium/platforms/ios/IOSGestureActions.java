@@ -99,6 +99,22 @@ public class IOSGestureActions implements GestureActionsInterface {
     }
 
     /**
+     * Performs a scroll gesture in the specified direction covering a certain percentage of the screen.
+     *
+     * @param driver    The AppiumDriver instance used to perform the gesture.
+     * @param direction The direction of the scroll (UP, DOWN, LEFT, RIGHT).
+     * @param percent   The percentage of the screen the scroll should cover. <b>Currently not supported on the iOS platform.</b>
+     * @param left      The left coordinate of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
+     * @param top       The top coordinate of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
+     * @param width     The width of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
+     * @param height    The height of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
+     */
+    @Override
+    public void scroll(AppiumDriver driver, Direction direction, double percent, int left, int top, int width, int height) {
+        driver.executeScript("mobile: scroll", Map.of("direction", direction.name().toLowerCase()));
+    }
+
+    /**
      * Performs a pinch open gesture on the screen.
      *
      * @param driver The AppiumDriver instance used to perform the gesture.

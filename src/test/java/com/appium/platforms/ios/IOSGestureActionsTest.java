@@ -74,6 +74,14 @@ class IOSGestureActionsTest {
         verify(driver, times(1)).executeScript("mobile: scroll", Map.of("direction", "up", "elementId", webElement.getId()));
     }
 
+    @DisplayName("Should call scroll method with direction, percent and coordinates")
+    @Test
+    void testScrollWithDirectionPercentAndCoordinates() {
+        iosGestureActions.scroll(driver, Direction.UP, 0.5, 0, 0, 100, 100);
+        verify(driver, times(1)).executeScript("mobile: scroll", Map.of("direction", "up"));
+    }
+
+
     @DisplayName("Should call pinchOpen method with scale and speed")
     @Test
     void testPinchOpenWithScaleAndSpeed() {
