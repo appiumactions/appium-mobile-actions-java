@@ -74,6 +74,13 @@ class AndroidGestureActionsTest {
         verify(driver, times(1)).executeScript("mobile: scrollGesture", Map.of("direction", "up", "percent", 0.5, "elementId", webElement.getId()));
     }
 
+    @DisplayName("Should call scroll method with direction, percent and coordinates")
+    @Test
+    void testScrollWithDirectionPercentLeftTopWidthAndHeight() {
+        androidGestureActions.scroll(driver, Direction.UP, 0.5, 0, 0, 100, 100);
+        verify(driver, times(1)).executeScript("mobile: scrollGesture", Map.of("direction", "up", "percent", 0.5, "left", 0, "top", 0, "width", 100, "height", 100));
+    }
+
     @DisplayName("Should call pinchOpen method with scale and speed")
     @Test
     void testPinchOpenWithScaleAndSpeed() {

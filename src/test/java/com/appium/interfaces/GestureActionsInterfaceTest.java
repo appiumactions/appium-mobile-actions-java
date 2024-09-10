@@ -69,6 +69,13 @@ class GestureActionsInterfaceTest {
         verify(gestureActionsInterface, times(1)).scroll(driver, Direction.UP, 0.5, webElement);
     }
 
+    @DisplayName("Should call scroll method with direction, percent and coordinates")
+    @Test
+    void testScrollWithDirectionPercentAndCoordinates() {
+        gestureActionsInterface.scroll(driver, Direction.UP, 0.5, 0, 0, 100, 100);
+        verify(gestureActionsInterface, times(1)).scroll(driver, Direction.UP, 0.5, 0, 0, 100, 100);
+    }
+
     @DisplayName("Should call pinchOpen method with scale and speed")
     @Test
     void testPinchOpenWithScaleAndSpeed() {
