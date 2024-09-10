@@ -108,6 +108,7 @@ public class IOSGestureActions implements GestureActionsInterface {
      * @param top       The top coordinate of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
      * @param width     The width of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
      * @param height    The height of the scroll bounding area. <b>Currently not supported on the iOS platform.</b>
+     * @see <a href="https://github.com/appium/appium-xcuitest-driver/blob/master/docs/reference/execute-methods.md#mobile-scroll">XCUITest - scroll</a>
      */
     @Override
     public void scroll(AppiumDriver driver, Direction direction, double percent, int left, int top, int width, int height) {
