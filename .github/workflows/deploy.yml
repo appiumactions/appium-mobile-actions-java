@@ -78,11 +78,12 @@ concurrency:
 env:
   NODE_OPTIONS: --max-old-space-size=6144
 
+defaults:
+  run:
+    working-directory: ./.github/docs
+
 jobs:
   deploy:
-    defaults:
-      run:
-        working-directory: ./.github/docs
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
