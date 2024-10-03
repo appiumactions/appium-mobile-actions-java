@@ -40,9 +40,6 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/${organizationName}/${projectName}/tree/main/',
         },
-        blog: {
-          editUrl: 'https://github.com/${organizationName}/${projectName}/tree/main/',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
