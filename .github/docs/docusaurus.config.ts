@@ -2,16 +2,19 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const organizationName = "appiumactions";
+const projectName = "appium-mobile-actions-java";
+
 const config: Config = {
   title: 'Appium Mobile Actions',
   tagline: 'Mobile Automation Test Support',
   favicon: 'img/appium-logo-horiz.png',
 
   // Set the production url of your site here
-  url: 'https://appiumactions.github.io',
+  url: 'https://${organizationName}.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl = '/${projectName}/';
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -22,9 +25,6 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -38,8 +38,10 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/${organizationName}/${projectName}/tree/main/',
+        },
+        blog: {
+          editUrl: 'https://github.com/${organizationName}/${projectName}/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
