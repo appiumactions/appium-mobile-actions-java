@@ -21,8 +21,8 @@ const config: Config = {
   organizationName: 'appiumactions', // Usually your GitHub org/user name.
   projectName: 'appium-mobile-actions-java', // Usually your repo name.
   deploymentBranch: 'gh-pages',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // onBrokenLinks: 'throw',
+  // onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
 
   i18n: {
