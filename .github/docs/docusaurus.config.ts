@@ -2,19 +2,16 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const organizationName = "appiumactions";
-const projectName = "appium-mobile-actions-java";
-
 const config: Config = {
   title: 'Appium Mobile Actions',
   tagline: 'Mobile Automation Test Support',
   favicon: 'img/appium-logo-horiz.png',
 
   // Set the production url of your site here
-  url: 'https://${organizationName}.github.io',
+  url: 'https://appiumactions.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/${projectName}/',
+  baseUrl: '/appium-mobile-actions-java/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -38,7 +35,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/${organizationName}/${projectName}/tree/main/',
+          editUrl: 'https://github.com/appiumactions/appium-mobile-actions-java/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -48,8 +45,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/appium-logo-horiz.png',
     navbar: {
       title: 'Appium Mobile Actions',
       logo: {
