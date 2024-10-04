@@ -20,4 +20,6 @@ Until version 7.6.0 of **[java_client](https://github.com/appium/java-client)** 
 
 ### Open Source
 
+One of the objectives of this project is to provide more resources to software quality engineers who use Java and Appium as a stack for automated mobile testing. Help make this community even stronger!
+
 Contributions are welcome! Please refer to the [contributing guidelines](https://github.com/appiumactions/appium-mobile-actions-java/blob/main/CONTRIBUTING.md) for more information.
