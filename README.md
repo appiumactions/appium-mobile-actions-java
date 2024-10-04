@@ -1,5 +1,9 @@
 # Appium Mobile Actions for Java
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.appiumactions/appium-mobile-actions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.appiumactions/appium-mobile-actions)
+[![Javadocs](https://www.javadoc.io/badge/io.github.appiumactions/appium-mobile-actions.svg)](https://www.javadoc.io/doc/io.github.appiumactions/appium-mobile-actions)
+[![Github Actions](https://github.com/appiumactions/appium-mobile-actions-java/actions/workflows/build-test.yml/badge.svg)](https://github.com/appiumactions/appium-mobile-actions-java/actions/workflows/build-test.yml)
+
 This project provides a comprehensive set of actions to automate mobile interactions using Appium and Java. It simplifies the process of performing common gestures, device manipulations, and session management tasks on both Android and iOS platforms.
 All features in this lib are based on actions provided by the UiAutomator2 (Android) and XCUITest (iOS) plugins.
 
