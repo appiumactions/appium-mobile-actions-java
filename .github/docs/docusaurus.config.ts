@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Appium Mobile Actions',
-  tagline: 'Mobile Automation Test Support',
+  tagline: 'Support for automated mobile testing with Java and Appium',
   favicon: 'img/appium-logo-horiz.png',
 
   // Set the production url of your site here
