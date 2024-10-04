@@ -1,6 +1,5 @@
 # Appium Mobile Actions for Java
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.appiumactions/appium-mobile-actions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.appiumactions/appium-mobile-actions)
 [![Javadocs](https://www.javadoc.io/badge/io.github.appiumactions/appium-mobile-actions.svg)](https://www.javadoc.io/doc/io.github.appiumactions/appium-mobile-actions)
 [![Github Actions](https://github.com/appiumactions/appium-mobile-actions-java/actions/workflows/build-test.yml/badge.svg)](https://github.com/appiumactions/appium-mobile-actions-java/actions/workflows/build-test.yml)
 
